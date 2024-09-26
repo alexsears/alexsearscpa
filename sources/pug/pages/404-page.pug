@@ -1,0 +1,27 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = '404 Page'
+
+block page
+	// Page content
+	section.section.section-single.bg-gray-800(style='background-image: url(static/images/bg-image-3.jpg);')
+		.section-single-inner
+			.section-single-dummy
+			.section-single-main: .container 
+				.row.row-30
+					.col-sm-6.text-center.text-sm-start: p.text-extra-large 404
+					.col-sm-6
+						.section-single-main-content
+							h6.title-decorated.title-decorated-lg Page was not found
+							p: span.text-width-2 You may have mistyped the address or the page may have moved.
+							a.button.button-lg.button-primary.button-winona(href='index.html') Back to home page
+							
+						
+			.footer-minimal.section-single-footer
+				.container
+					.footer-minimal-inner
+						a.brand(href='index.html') 
+							+png(logo.light.trueSize)(srcset='static/images/' + logo.light.retina + '.png')
+						+rights

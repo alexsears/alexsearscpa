@@ -1,0 +1,84 @@
+/*
+*
+* ToTop
+*/
+
+.ui-to-top {
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	z-index: 100;
+	width: $form-input-height;
+	height: $form-input-height;
+	border-radius: $border-radius-lg;
+	color: $white;
+	background: $primary;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	transition: transform .45s ease-in-out, background .3s cubic-bezier(0.2, 1, 0.3, 1);
+	transform: translate3d(0, 100px, 0);
+
+	&::before,
+	&::after {
+		content: '\f239';
+		font-family: 'Material Design Icons';
+		font-size: 20px;
+		line-height: $form-input-height;
+		vertical-align: middle;
+		transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+	}
+
+	&::before {
+		display: block;
+	}
+
+	&::after {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 0;
+		opacity: 0;
+		transform: translate3d(0, 0, 0);
+	}
+
+	&:hover {
+		&::before {
+			opacity: 0;
+			transform: translate3d(0, -30%, 0);
+		}
+
+		&::after {
+			opacity: 1;
+			transform: translate3d(0, 0, 0) translateY(-50%);
+		}
+	}
+
+	&:hover {
+		color: $white;
+		background: $primary-lighten;
+		text-decoration: none;
+	}
+
+	&:focus {
+		color: $white;
+	}
+
+	&.active {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+html.mobile .ui-to-top,
+html.tablet .ui-to-top {
+	display: none !important;
+}
+
+@include media-breakpoint-up(sm) {
+	.ui-to-top {
+		right: 40px;
+		bottom: 40px;
+	}
+}
+
+

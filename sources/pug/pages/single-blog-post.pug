@@ -1,0 +1,143 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Single Blog Post'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	section.section.section-lg
+		.container
+			.row.row-50
+				.col-lg-8
+					article.post-creative
+						h3.post-creative-title Where Marketers Need to Succeed This Year
+						ul.post-creative-meta
+							li
+								span.icon.mdi.mdi-calendar-clock
+								time(datetime='2023') May 9, 2023 at 6:09 pm
+							li
+								span.icon.mdi.mdi-tag-multiple
+								a(href='#') Article
+
+						h4 The marketing landscape evolves at what often seems like a bewildering pace. There are changes in consumer preferences. There are updates to search algorithms. And, we can't forget the frequent updates and features added to various social media channels.
+
+						+jpg('single-blog-post-1-770x458')
+
+						p For that reason, being a successful marketer today might appear to require a never-ending list of skills. Where do you need to excel -- content creation, social media, web analytics, or all of the above ... and more? In a perfect world, it would be possible to constantly maintain all of these skills at an expert level. But in reality, it's okay -- and helpful -- to prioritize. The question remains, however: What skills do marketers need the most to both keep up with the industry, and be good at their jobs?
+						p Luckily, the infographic below from TEKsystems outlines five crucial skills - largely digital ones - that marketers need to succeed this year. It includes five of the major marketing spheres.
+
+						// Quote Light
+						blockquote.quote-light
+							+quote-mark.quote-light-mark
+							.quote-light-text
+								p These spheres are Digital Advertising, Social Marketing, Website Design/Development, Content Development, and Mobile Marketing.
+
+						+jpg('single-blog-post-2-770x458')
+
+						p We're not suggesting that marketers need to become experts in every single one of these areas. However, if there's a specific area of marketing that interests you the most, or into which you'd like to move, understanding where you'll need to excel can help you get there much faster without trying to be the best in everything.
+						p Plus, as your brand and the landscape continue to evolve, this list can serve as a good reference when you feel like you might need to brush up on certain skills, or at least become more aware of them when it's necessary. That way, in addition to honing your own skills, you can understand where you might need to focus team-building efforts.
+
+						ul.post-creative-footer
+							li Share this post!
+							li
+								include ../includes/_group-social-buttons
+
+					.section-sm
+						h3 Comments
+						.comment-classic-group
+							// Comment Classic
+							article.comment-classic
+								figure.comment-classic-figure: +jpg('comment-1-48x48', 'comment-classic-image')
+								.comment-classic-main
+									p.comment-classic-name Albert Webb
+									.comment-classic-text
+										p Thank you for this amazing and inspiring article. It helped me understand what I need to improve as a marketer. I’m looking forward to read more such articles in your blog.
+									ul.comment-classic-meta
+										li: time(datetime='2023') May, 9 2023 at 9:06 am
+										li: a.comment-classic-reply(href='#' aria-label='reply')
+
+							.comment-classic-group
+								// Comment Classic
+								article.comment-classic
+									figure.comment-classic-figure: +jpg('comment-2-48x48', 'comment-classic-image')
+									.comment-classic-main
+										p.comment-classic-name Theresa Barnes 
+										.comment-classic-text
+											p Thank you! I’m already preparing a new article about top 5 skills for IT specialists including programmers, web developers, and designers.
+										ul.comment-classic-meta
+											li: time(datetime='2023') May, 9 2023 at 9:47 am
+											li: a.comment-classic-reply(href='#' aria-label='reply')
+
+						.comment-classic-group
+							// Comment Classic
+							article.comment-classic
+								figure.comment-classic-figure: +jpg('comment-3-48x48', 'comment-classic-image')
+								.comment-classic-main
+									p.comment-classic-name Jason Hughes
+									.comment-classic-text
+										p This article contains the basics for every marketing expert to read and learn. As a marketer & PR manager with yers of experience i regret not reading this post years ago.
+									ul.comment-classic-meta
+										li: time(datetime='2023') May, 8 2023 at 12:08 pm
+										li: a.comment-classic-reply(href='#' aria-label='reply')
+
+					.section-sm.section-bottom-0
+						h3 Send a Comment
+						// RD Mailform
+						form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+							.row.row-10
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-first-name') First Name
+										input#comment-first-name.form-input(type='text' name='name' data-constraints='@Required')
+
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-last-name') Last Name
+										input#comment-last-name.form-input(type='text' name='name' data-constraints='@Required')
+
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-email') E-mail
+										input#comment-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+
+								.col-md-6
+									.form-wrap
+										label.form-label-outside(for='comment-phone') Phone
+										input#comment-phone.form-input(type='text' name='phone' data-constraints='@PhoneNumber')
+
+								.col-12
+									.form-wrap
+										label.form-label-outside(for='comment-message') Your Message
+										textarea#comment-message.form-input(name='message' data-constraints='@Required')
+
+
+							button.button.button-primary.button-winona(type='submit') Submit
+
+				.col-lg-4
+					// Profile Thin
+					article.profile-thin
+						.profile-thin-aside
+							+jpg('profile-thin-1-168x168', 'profile-thin-image')
+							a.profile-thin-contact-button(href='mailto:#')
+								span.icon.mdi.mdi-email-outline
+								span.icon.mdi.mdi-email-outline
+						.profile-thin-main
+							p.profile-thin-title Theresa Barnes
+							p.profile-thin-subtitle Marketer, blogger  
+							p I am a professional blogger interested in everything taking place in cyberspace. I try my best to make this website a better place to visit.
+							include ../includes/_group-social-buttons
+							a.button.button-sm.button-primary-outline.button-winona(href='#') View full profile
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

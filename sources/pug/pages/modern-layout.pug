@@ -1,0 +1,82 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-thumbnail-classic
+
+block variables
+	- var activeCategory = 'portfolio'
+	- var pageName = 'Modern Layout'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	section.section.section-lg.oh
+		.container
+			// Isotope Filters
+			.isotope-filters.isotope-filters-modern
+				button.isotope-filters-toggle.button.button-sm.button-primary(data-custom-toggle='#isotope-filters', data-custom-toggle-disable-on-blur="true") Filter
+					span.caret
+				ul.isotope-filters-list#isotope-filters
+					li: a.active(data-isotope-filter='*', data-isotope-group='portfolio', href='#') All Types
+					li: a(data-isotope-filter='Type 1', data-isotope-group='portfolio', href='#') Type 1 
+					li: a(data-isotope-filter='Type 2', data-isotope-group='portfolio', href='#') Type 2
+
+			.isotope.isotope-condensed.row.hoverdir(data-isotope-layout='masonry' data-isotope-group='portfolio')
+				.col-sm-6.col-lg-4.isotope-item.hoverdir-item(data-filter='Type 2' data-hoverdir-target='.thumbnail-classic-caption')
+					+thumbnail-classic({
+						img: 'gallery-masonry-condensed-1-390x576',
+						link: 'single-project.html',
+						title: 'iGadget',
+						text: 'Marketing Strategy Development'
+					}).thumbnail-classic-lg
+
+				.col-sm-6.col-lg-4.isotope-item.hoverdir-item(data-filter='Type 1' data-hoverdir-target='.thumbnail-classic-caption')
+					+thumbnail-classic({
+						img: 'gallery-masonry-condensed-2-390x288',
+						link: 'single-project.html',
+						title: 'Fruits Inc.',
+						text: 'SEO, Online Advertising'
+					})
+
+				.col-sm-6.col-lg-4.isotope-item.hoverdir-item(data-filter='Type 2' data-hoverdir-target='.thumbnail-classic-caption')
+					+thumbnail-classic({
+						img: 'gallery-masonry-condensed-3-390x576',
+						link: 'single-project.html',
+						title: 'Computerize Ltd.',
+						text: 'Research & Marketing Consultancy'
+					}).thumbnail-classic-lg
+
+				.col-sm-6.col-lg-4.isotope-item.hoverdir-item(data-filter='Type 2' data-hoverdir-target='.thumbnail-classic-caption')
+					+thumbnail-classic({
+						img: 'gallery-masonry-condensed-5-390x576',
+						link: 'single-project.html',
+						title: 'EcoWorld',
+						text: 'E-mail Marketing, SMM'
+					}).thumbnail-classic-lg
+
+				.col-sm-6.col-lg-4.isotope-item.hoverdir-item(data-filter='Type 1' data-hoverdir-target='.thumbnail-classic-caption')
+					+thumbnail-classic({
+						img: 'gallery-masonry-condensed-4-390x288',
+						link: 'single-project.html',
+						title: 'Accessories',
+						text: 'Brand Management Services'
+					}) 
+
+				.col-sm-6.col-lg-4.isotope-item.hoverdir-item(data-filter='Type 1' data-hoverdir-target='.thumbnail-classic-caption')
+					+thumbnail-classic({
+						img: 'gallery-masonry-condensed-6-390x288',
+						link: 'single-project.html',
+						title: 'MNGRZ Co.',
+						text: 'Copywriting, Video Production'
+					})
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

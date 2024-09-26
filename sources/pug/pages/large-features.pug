@@ -1,0 +1,47 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Large Features'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// A Few Words About Us
+	include ../sections/_section-about-1
+	
+	// A Few Words About Us
+	include ../sections/_section-about-2
+
+	// A Few Words About Us
+	include ../sections/_section-about-3
+		
+	// A Few Words About Us
+	include ../sections/_section-about-4
+				
+	// A Few Words About Us
+	include ../sections/_section-about-5
+							
+	// Our History
+	include ../sections/_section-our-history
+
+	// Profile
+	include ../sections/_section-profile
+
+	// Careers
+	include ../sections/_section-careers
+
+	// Partners
+	include ../sections/_section-partners
+
+	// Page Footer
+	include ../sections/_footer-minimal

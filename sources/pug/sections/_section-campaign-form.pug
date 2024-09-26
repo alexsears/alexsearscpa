@@ -1,0 +1,14 @@
+section.section.section-lg.bg-gray-100
+	.container
+		.row.justify-content-center
+			.col-sm-10.col-md-8.col-lg-7.col-xl-6
+				h3.wow-outer.text-center: span.wow.slideInUp Campaign Monitor
+				p.wow-outer: span.wow.slideInLeft Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.
+
+				// RD Mailform
+				form.rd-form.campaign-mailform.form-inline.wow.fadeIn(data-wow-delay='.2s' data-form-output="form-output-global", action='https://templatermonster.createsend.com/t/j/s/zjjikd/', method='post')
+					.form-wrap
+						input.form-input(id="campaign-1-email" type="email" name="email" data-constraints="@Email @Required")
+						label.form-label(for="campaign-1-email") Your e-mail
+					.form-button
+						button.button.button-primary.button-winona(type="submit") Subscribe

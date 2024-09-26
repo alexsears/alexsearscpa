@@ -1,0 +1,76 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-thumbnail-corporate
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Masonry Gallery'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	}).thumbnail-corporate-light 
+
+	section.section.section-lg.oh
+		.container
+			// Isotope Filters
+			.isotope-filters.isotope-filters-modern
+				button.isotope-filters-toggle.button.button-sm.button-primary(data-custom-toggle='#isotope-filters', data-custom-toggle-disable-on-blur="true") Filter
+					span.caret
+				ul.isotope-filters-list#isotope-filters
+					li: a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All Types
+					li: a(data-isotope-filter='Type 1', data-isotope-group='gallery', href='#') Type 1 
+					li: a(data-isotope-filter='Type 2', data-isotope-group='gallery', href='#') Type 2
+
+			.isotope.isotope-responsive.row(data-isotope-layout='masonry' data-isotope-group='gallery' data-lightgallery='group')
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-corporate({
+						img: 'gallery-masonry-1-370x256',
+						original: 'static/images/gallery-masonry-1-original.jpg',
+						title: 'Business Management'
+					}).thumbnail-corporate-light(data-lightgallery='item')
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-corporate({
+						img: 'gallery-masonry-2-370x464',
+						original: 'static/images/gallery-masonry-2-original.jpg',
+						title: 'Financial Planning' 
+					}).thumbnail-corporate-light.thumbnail-corporate-lg(data-lightgallery='item')
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-corporate({
+						img: 'gallery-masonry-3-370x256',
+						original: 'static/images/gallery-masonry-3-original.jpg',
+						title: 'Tax & Accounting'
+					}).thumbnail-corporate-light(data-lightgallery='item')
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-corporate({ 
+						img: 'gallery-masonry-4-370x464',
+						original: 'static/images/gallery-masonry-4-original.jpg',
+						title: 'Investment Management'
+					}).thumbnail-corporate-light.thumbnail-corporate-lg(data-lightgallery='item')
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-corporate({
+						img: 'gallery-masonry-6-370x464',
+						original: 'static/images/gallery-masonry-6-original.jpg',
+						title: 'Consulting & Advisory'
+					}).thumbnail-corporate-light.thumbnail-corporate-lg(data-lightgallery='item')
+					
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-corporate({
+						img: 'gallery-masonry-5-370x256',
+						original: 'static/images/gallery-masonry-5-original.jpg',
+						title: 'Business Plan Review'
+					}).thumbnail-corporate-light(data-lightgallery='item')
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

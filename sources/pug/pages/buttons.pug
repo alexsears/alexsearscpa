@@ -1,0 +1,64 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Buttons'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Button Sizes
+	section.section.section-sm.section-first
+		.container
+			h6 Button Sizes
+			.group.group-middle
+				.button.button-lg.button-primary.button-winona Large button
+				.button.button-lg.button-primary-outline.button-winona Light Large 
+			.group.group-middle
+				.button.button-primary.button-winona Medium button
+				.button.button-primary-outline.button-winona Light Medium
+			.group.group-middle
+				.button.button-sm.button-primary.button-winona Small button
+				.button.button-sm.button-primary-outline.button-winona Light Small
+
+	// Icon buttons
+	section.section.section-sm
+		.container
+			h6 Icon buttons
+			.group.group-middle
+				.button.button-icon.button-icon-left.button-lg.button-primary.button-winona
+					span.icon.mdi.mdi-magnify
+					| Search
+				.button.button-icon.button-icon-left.button-lg.button-primary-outline.button-winona
+					span.icon.mdi.mdi-magnify
+					| Search 
+			.group.group-middle
+				.button.button-icon.button-icon-left.button-primary.button-winona
+					span.icon.mdi.mdi-magnify
+					| Search
+				.button.button-icon.button-icon-left.button-primary-outline.button-winona
+					span.icon.mdi.mdi-magnify
+					| Search
+			.group.group-middle
+				.button.button-icon.button-icon-left.button-sm.button-primary.button-winona
+					span.icon.mdi.mdi-magnify
+					| Search
+				.button.button-icon.button-icon-left.button-sm.button-primary-outline.button-winona
+					span.icon.mdi.mdi-magnify
+					| Search
+					
+
+	// Social buttons
+	section.section.section-sm.section-last
+		.container
+			h6 Social buttons
+			include ../includes/_group-social-buttons
+
+	// Page Footer
+	include ../sections/_footer-minimal

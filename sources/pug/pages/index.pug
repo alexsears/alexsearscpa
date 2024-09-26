@@ -1,0 +1,141 @@
+extends  ../_skeleton
+
+//- Includes
+	
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Katy Accounting Firm'
+
+block page
+	// Page Header
+	include ../sections/_header-corporate
+		
+	// Slider Light
+	include ../sections/_section-slider-light
+	
+	// A Few Words About Us
+	include ../sections/_section-about-3
+		
+	// Small Features
+	include ../sections/_section-small-features
+		
+	// Thin CTA
+	section.section.section-xs.bg-primary-darker.text-center
+		.container
+			.row.justify-content-center
+				.col-sm-10.col-md-12
+					.box-cta-thin
+						h4.wow-outer: span.wow.slideInRight Learn the Cost of your #[span.fw-bold Accounting Solutions] Right Now!
+						.wow-outer.button-outer
+							a.button.button-primary.button-winona.wow.slideInLeft(href='pricing.html') View all pricing
+		
+	// Services
+	include ../sections/_section-services
+		
+	// Pricing
+	section.section.section-lg.bg-gray-100
+		.container
+			h3.wow-outer.text-center: span.wow.slideInDown Pricing
+			include ../includes/_row-pricing-3-columns
+		
+	// Testimonials
+	section.section.section-lg.text-center
+		.container
+			h3.wow-outer: span.wow.slideInDown Testimonials
+			// Owl Carousel
+			.owl-carousel.wow.fadeIn(
+			data-items='1'
+			data-md-items='2'
+			data-lg-items='3'
+			data-dots='true'
+			data-nav='false'
+			data-loop='true'
+			data-margin='30'
+			data-autoplay='true'
+			data-stage-padding='0'
+			data-mouse-drag="false")
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-3-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Albert Webb
+							p.quote-classic-caption CEO at Majestic
+					.quote-classic-text
+						p Making the switch to Katy Accounting Firm was the best business decision I could have made. They are on top of everything for me, always with an eye toward helping me make the most profit.
+
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-1-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Kelly McMillan
+							p.quote-classic-caption Private Entrepreneur
+					.quote-classic-text
+						p With Katy Accounting Firm, I am getting the same high degree of competence and experience as before, but with a much higher level of service. At much more reasonable fees, too! 
+
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-2-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Harold Barnett
+							p.quote-classic-caption Regional Manager
+					.quote-classic-text
+						p I’m personally and financially healthier because of your company’s expertise and dedication. My partners at Katy Accounting Firm provide great value with clear, honest accounting strategies.
+
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-5-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Bill Warner
+							p.quote-classic-caption Private Entrepreneur
+					.quote-classic-text
+						p We have been working with Katy Accounting Firm for three years. Their team is very professional, and always gives clear advice and guidance in a prompt and efficient manner.
+						
+
+	// Centered CTA
+	include ../sections/_section-centered-cta
+		
+	// Latest Blog Posts
+	section.section.section-lg.text-center
+		.container
+			h3.wow-outer.text-center: span.wow.slideInDown Latest Blog Posts
+			.row.row-50
+				.col-md-6.wow-outer
+					// Post Modern
+					article.post-modern.wow.slideInLeft
+						a.post-modern-media(href=links.post): +jpg('grid-blog-1-571x353')
+						h4.post-modern-title: a(href=links.post) Managing Your Finances
+						ul.post-modern-meta
+							li by Theresa Barnes 
+							li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+							li: a.button-winona(href='#') News 
+						p Personal financial management is a subject that is not taught in many schools, but is something that nearly everyone has to deal with in their lives later on. Here are some statistics...
+
+				.col-md-6.wow-outer
+					// Post Modern
+					article.post-modern.wow.slideInLeft
+						a.post-modern-media(href=links.post): +jpg('grid-blog-2-571x353')
+						h4.post-modern-title: a(href=links.post) 5 Reasons Why You Need an Accountant
+						ul.post-modern-meta
+							li by Theresa Barnes
+							li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+							li: a.button-winona(href='#') Advertising
+						p As your business — and revenue — grow, managing your financials may become a task you don’t have the time or knowledge to manage. Specifically, when it comes avoiding legal and...
+						
+			.wow-outer.button-outer
+				a.button.button-primary-outline.button-winona.wow.slideInUp(href='grid-blog.html') View all Blog posts
+	
+	// Contacts
+	include ../sections/_section-contact-form-and-map
+	
+	// Contact Info
+	include ../sections/_section-contact-info
+		
+	// Page Footer
+	include ../sections/_footer-advanced
+	+footer-advanced({
+		about: 'Our firm is one of the leading accounting firms in the area. By combining our expertise, experience and the energy of our staff, each client receives close personal and professional attention. Our high standards, service and specialized staff spell the difference between our outstanding performance and other firms.',
+		posts: [
+			'Top Tips from Accountants: How To Handle IRS Scams',
+			'Blogging for Financial Advisors: Build a Trusted Relationship Through Your Blog'
+		]
+	})

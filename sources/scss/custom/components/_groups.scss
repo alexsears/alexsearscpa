@@ -1,0 +1,73 @@
+/*
+* Element groups
+*/
+
+html {
+	.group {
+		@include group(20px, 15px);
+
+		@include media-breakpoint-up(lg) {
+		  @include groupX(30px);
+		}
+	}
+
+	.group-xs {
+		@include group(7px);
+	}
+	
+	.group-sm {
+		@include group(10px);
+	}
+
+	.group-lg {
+		@include group(40px, 25px);
+	}
+
+	.group-xl {
+		@include group(30px, 20px);
+
+		@include media-breakpoint-up(lg) {
+			@include group-media(45px, 20px);
+		}
+	}
+
+	.group-sm-justify {
+		.button {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		@include media-breakpoint-up(md) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			> * {
+				flex-grow: 1;
+				flex-shrink: 0;
+			}
+
+			.button {
+				min-width: 130px;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+	}
+
+	// Mods
+	.group-middle {
+		display: table;
+		vertical-align: middle;
+
+		> * {
+			vertical-align: middle;
+		}
+	}
+}
+
+* + .group { margin-top: 30px; }
+* + .group-xs { margin-top: 35px; }
+* + .group-sm { margin-top: 30px; }
+* + .group-xl { margin-top: 20px; }
+ 

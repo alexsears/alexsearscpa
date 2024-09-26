@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <title>Resources - Katy Accounting Firm</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Work+Sans:300,700,800%7COswald:300,400,500">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" id="main-styles-link">
+</head>
+<body>
+    <div class="page">
+        <!-- Page Header-->
+        <header class="section page-header">
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap">
+                <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-fixed" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-aside-outer">
+                        <div class="rd-navbar-aside">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                                <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="{{ url_for('serve_index') }}"><img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/></a>
+                            </div>
+                            <div class="rd-navbar-collapse">
+                                <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
+                                <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
+                                    <article class="unit align-items-center">
+                                        <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-phone"></span></div>
+                                        <div class="unit-body">
+                                            <ul class="list-0">
+                                                <li><a class="link-default" href="tel:8326770085">832-677-0085</a></li>
+                                                <li><a class="link-default" href="mailto:info@alexsearscpa.com">info@alexsearscpa.com</a></li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                    <article class="unit align-items-center">
+                                        <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-map-marker"></span></div>
+                                        <div class="unit-body"><a class="link-default" href="#"> Katy, TX 77494</a></div>
+                                    </article><a class="button button-primary-outline button-winona" href="{{ url_for('serve_contacts') }}">Request a call</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rd-navbar-main-outer">
+                        <div class="rd-navbar-main">
+                            <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                                <!-- RD Navbar Search-->
+                                <div class="rd-navbar-search" id="rd-navbar-search-1">
+                                    <button class="rd-navbar-search-toggle" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
+                                    <form class="rd-search" action="{{ url_for('serve_search_results') }}" data-search-live="rd-search-results-live-1" method="GET">
+                                        <div class="form-wrap">
+                                            <label class="form-label" for="rd-navbar-search-form-input-1">Search...</label>
+                                            <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
+                                            <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
+                                        </div>
+                                        <button class="rd-search-form-submit fa-search" type="submit"></button>
+                                    </form>
+                                </div>
+                                <!-- RD Navbar Nav-->
+                                <ul class="rd-navbar-nav">
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_index') }}">Home</a></li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_about_us') }}">About Us</a></li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_services') }}">Our Services</a>
+                                        <!-- RD Navbar Dropdown-->
+                                        <ul class="rd-menu rd-navbar-dropdown">
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_accounting_services') }}">Accounting Services</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_tax_services') }}">Tax Services</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_consulting') }}">Consulting</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_audit_and_assurance') }}">Audit & Assurance</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_financial_planning') }}">Financial Planning</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_business_advisory') }}">Business Advisory</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url_for('serve_resources') }}">Resources</a></li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_blog') }}">Blog</a></li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_contacts') }}">Contact Us</a></li>
+                                </ul>                
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Resources Content Area -->
+        <section class="section section-lg">
+            <div class="container">
+                <h2 class="text-center mb-5">Resources - UNDER CONSTRUCTION</h2>
+                <div class="row row-50 justify-content-center justify-content-lg-between">
+                    <div class="col-md-10 col-lg-6">
+                        <h3>Financial Calculators</h3>
+                        <p>Access our range of financial calculators to help you plan your finances:</p>
+                        <ul>
+                            <li><a href="#">Loan Calculator</a></li>
+                            <li><a href="#">Retirement Savings Calculator</a></li>
+                            <li><a href="#">Investment Returns Calculator</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-10 col-lg-6">
+                        <h3>Downloadable Forms</h3>
+                        <p>Download commonly used forms:</p>
+                        <ul>
+                            <li><a href="#">W-9 Form</a></li>
+                            <li><a href="#">1040 Form</a></li>
+                            <li><a href="#">Schedule C Form</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row row-50 justify-content-center justify-content-lg-between mt-5">
+                    <div class="col-md-10 col-lg-6">
+                        <h3>Financial Guides</h3>
+                        <p>Access our comprehensive financial guides:</p>
+                        <ul>
+                            <li><a href="#">Guide to Personal Finance</a></li>
+                            <li><a href="#">Small Business Accounting Guide</a></li>
+                            <li><a href="#">Tax Planning Strategies</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-10 col-lg-6">
+                        <h3>Useful Links</h3>
+                        <p>External resources you might find helpful:</p>
+                        <ul>
+                            <li><a href="https://www.irs.gov/" target="_blank">Internal Revenue Service (IRS)</a></li>
+                            <li><a href="https://www.sba.gov/" target="_blank">Small Business Administration</a></li>
+                            <li><a href="https://www.aicpa.org/" target="_blank">American Institute of CPAs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Footer-->
+        <footer class="section footer-standard bg-gray-700">
+            <!-- Footer content remains the same -->
+        </footer>
+    </div>
+    <div class="preloader"> 
+        <div class="preloader-logo">
+            <img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="Katy Accounting Firm" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/>
+        </div>
+        <div class="preloader-body">
+            <div id="loadingProgressG">
+                <div class="loadingProgressG" id="loadingProgressG_1"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.preloader').style.display = 'none';
+        });
+    </script>
+    </body>
+    </html>

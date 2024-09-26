@@ -1,0 +1,127 @@
+/*
+*
+* Preloader
+*/
+
+//
+// Base styles
+//
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10000;  
+	display: flex; 
+	flex-direction: column; 
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	transition: .3s all ease; 
+	pointer-events: none; 
+	backface-visibility: hidden;
+ 
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		transition: .2s linear;
+		transform: translateY(0);
+		pointer-events: none;
+	}
+
+	&::before {
+		top: 0;
+		bottom: 50%;
+		background: $white;
+	}
+
+	&::after {
+		top: 50%;
+		bottom: 0;
+		background: $gray-100;
+	}
+
+	&.loaded {
+		&::before,
+		&::after {
+			transition: .4s linear;
+		}
+ 
+		&::before {
+			transform: translateY(-100%);
+		}
+
+		&::after {
+			transform: translateY(100%);
+		}
+
+		.preloader-logo,
+		.preloader-body {
+			opacity: 0;
+			visibility: hidden;
+			transition: 0s;
+		}
+	}
+}
+
+.preloader-logo,
+.preloader-body {
+	transition: 0s .2s;
+}
+
+.preloader-logo {
+	position: relative;
+	z-index: 10;
+	transform: translate3d(0, -50%, 0);
+	padding: 40px;
+}
+
+.preloader-body {
+	position: absolute;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	left: 0;
+	right: 0;
+	z-index: 10;
+	text-align: center;
+}
+
+//
+// Custom Styles
+//
+$value: 100vw;
+#loadingProgressG {
+	width: $value;
+	height: 5px;
+	overflow: hidden; 
+	background: $gray-200;
+	border-radius: $border-radius-lg;
+	margin: auto;
+}
+
+.loadingProgressG {
+	background: $primary;
+	margin-top: 0;
+	margin-left: -$value;
+	animation-name: bounce_loadingProgressG;
+	animation-duration: 2.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	width: $value; 
+	height: 5px;
+	transition: .5s;
+}
+
+@keyframes bounce_loadingProgressG {
+	0% {
+		margin-left: -$value;
+	}
+
+	100% {
+		margin-left: $value;
+	}
+}

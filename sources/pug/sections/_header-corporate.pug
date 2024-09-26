@@ -1,0 +1,60 @@
+- navbarCounter++
+
+header.section.page-header
+	// RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-corporate(
+		data-layout=                'rd-navbar-fixed'
+		data-sm-layout=             'rd-navbar-fixed'
+		data-md-layout=             'rd-navbar-fixed'
+		data-md-device-layout=      'rd-navbar-fixed'
+		data-lg-layout=             'rd-navbar-static'
+		data-lg-device-layout=      'rd-navbar-fixed'
+		data-xl-layout=             'rd-navbar-static'
+		data-xl-device-layout=      'rd-navbar-fixed'
+		data-lg-stick-up-offset=    '46px'
+		data-xl-stick-up-offset=    '46px'
+		data-xxl-stick-up-offset=   '46px'
+		data-lg-stick-up=           'true'
+		data-xl-stick-up=           'true'
+		data-xxl-stick-up=          'true')
+			.rd-navbar-aside-outer
+				.rd-navbar-aside
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='#rd-navbar-nav-wrap-' + navbarCounter): span
+
+						// RD Navbar Brand
+						a.rd-navbar-brand(href='index.html')
+							+png(logo.default.trueSize)(srcset='static/images/' + logo.default.retina + '.png')
+
+					.rd-navbar-collapse
+						button.rd-navbar-collapse-toggle.rd-navbar-fixed-element-1(data-rd-navbar-toggle='#rd-navbar-collapse-content-' + navbarCounter): span
+						.rd-navbar-collapse-content(id='rd-navbar-collapse-content-' + navbarCounter)
+							article.unit.align-items-center
+								.unit-left: span.icon.icon-md.icon-modern.mdi.mdi-phone
+								.unit-body
+									ul.list-0
+										li: a.link-default(href='tel:#') 832-677-0085
+										li: a.link-default(href='tel:#') 832-677-0085
+
+							article.unit.align-items-center
+								.unit-left: span.icon.icon-md.icon-modern.mdi.mdi-map-marker
+								.unit-body: a.link-default(href='tel:#') #[br] Katy, TX 77494
+							a.button.button-primary-outline.button-winona(href='#') Request a call
+
+			.rd-navbar-main-outer
+				.rd-navbar-main
+					.rd-navbar-nav-wrap(id='rd-navbar-nav-wrap-' + navbarCounter)
+						// RD Navbar Search
+						.rd-navbar-search(id='rd-navbar-search-' + navbarCounter)
+							button.rd-navbar-search-toggle(data-rd-navbar-toggle='#rd-navbar-search-' + navbarCounter): span
+							form.rd-search(action='search-results.html' data-search-live='rd-search-results-live-' + navbarCounter, method='GET')
+								.form-wrap
+									label.form-label(for='rd-navbar-search-form-input-' + navbarCounter) Search...
+									input.form-input(class='rd-navbar-search-form-input' id='rd-navbar-search-form-input-' + navbarCounter, type='text' name='s' autocomplete="off")
+									.rd-search-results-live(id='rd-search-results-live-' + navbarCounter)
+								button.rd-search-form-submit.fa-search(type='submit')
+
+						include ../includes/_navigation

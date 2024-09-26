@@ -1,0 +1,57 @@
+extends  ../_skeleton
+include ../components/countdown
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Progress Bars'
+
+block page  
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Skill Bars 
+	section.section.section-lg
+		.container
+			.row.row-50
+				.col-md-10.col-lg-6.col-xl-5
+					h6 Skill Bars
+					+progress-bar-linear({
+						title: 'Branding',
+						valueTo: '90'
+					})
+
+					+progress-bar-linear({
+						title: 'Web Design',
+						valueTo: '65'
+					})
+
+					+progress-bar-linear({
+						title: 'Advertising',
+						valueTo: '100'
+					})
+
+					+progress-bar-linear({
+						title: 'Strategy',
+						valueTo: '75'
+					})
+
+	.container
+		h6 Countdown
+
+	// Countdown
+	+parallax({
+		img: 'parallax-1'
+	}).section-lg.bg-gray-800
+		.container
+			// TimeCircles
+			+countdown({ to: '2023-12-31' })
+	// Page Footer
+	include ../sections/_footer-minimal

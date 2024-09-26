@@ -1,0 +1,137 @@
+/*
+*
+* Utilities custom
+*/
+.height-fill {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+
+	> * {
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
+}
+
+// Object inline 
+.object-inline {
+	white-space: nowrap;
+	> * {
+		display: inline-block;
+		min-width: 20px;
+		vertical-align: top;
+		white-space: normal;
+	}
+	
+	&.wow span {
+		display: inline-block;
+	}
+
+	> * + * {
+		margin-left: 11px;
+	}
+}
+
+.wow-outer {
+	.object-inline span {
+		display: inline-block;
+	}
+}
+
+.oh {
+	position: relative;
+	overflow: hidden;
+}
+
+// Text decorations
+.text-decoration-lines {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+
+	&-content {
+		position: relative;
+		display: inline-block;
+		padding: 0 20px;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			height: 1px;
+			background: $gray-300;
+			top: 50%;
+			width: 100vw;
+		}
+
+		&::before {
+			left: 0;
+			transform: translate3d(-100%, 0, 0);
+		}
+
+		&::after {
+			right: 0;
+			transform: translate3d(100%, 0, 0);
+		}
+	}
+}
+
+* + .text-decoration-lines {
+	margin-top: 30px;
+}
+
+.text-block {
+	> * {
+		margin-left: .125em;
+		margin-right: .125em;
+	}
+}
+
+.offset-right-1 {
+	@include media-breakpoint-up(lg) {
+		margin-right: 40px;
+	}
+}
+
+// Banner
+.banner {
+	background-position: center center;
+	background-size: cover;
+}
+
+
+// Phone Frame
+.phone-frame {
+	max-width: 296px;
+	padding: 0 5px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: -46.037px 40.02px 21px 0px rgba(0, 0, 0, 0.02);
+}
+
+@include media-breakpoint-down(md) {
+  .phone-frame {
+		display: none;
+	} 
+}
+
+
+// Tip Mark
+.tip-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2em;
+	height: 2em;
+	padding-left: 2px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	line-height: 2em;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid $gray-200;
+	color: $primary;
+}

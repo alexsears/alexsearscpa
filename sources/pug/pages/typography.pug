@@ -1,0 +1,133 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Typography'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Base typography  
+	section.section.section-sm.section-first
+		.container
+			.row.row-50
+				.col-xl-8
+					ul.list-xl
+						li
+							h1 H1 Heading
+							p In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.
+
+						li
+							h2 H2 Heading
+							p In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.
+
+						li
+							h3 H3 Heading
+							p In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.
+
+						li
+							h4 H4 Heading
+							p In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.
+
+						li
+							h5 H5 Heading
+							p In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.
+						li
+							h6 H6 Heading
+							p In quis tempor ipsum. Phasellus tincidunt bibendum enim in ultrices. Morbi at blandit metus, quis tempus ipsum. Fusce a ipsum eu libero mattis pharetra. Sed tincidunt ante id viverra accumsan. In semper vel tortor eu euismod. Nullam sodales elementum nibh in gravida.
+
+	// Blockquote
+	section.section.section-sm
+		.container
+			.row.row-50
+				.col-lg-10.col-xl-8
+					h6 Blockquote
+					// Quote Light
+					blockquote.quote-light
+						+quote-mark.quote-light-mark
+						.quote-light-text
+							p Nullam a sapien tincidunt, malesuada ipsum ut, convallis augue. Suspendisse fermentum sapien rhoncus, posuere nulla sit amet, tempor lorem. Sed sapien enim, imperdiet ut ultricies nec, facilisis sit amet nulla. Nulla tempus scelerisque lorem vel ultricies. Sed lobortis libero ut fringilla consectetur.
+
+	// HTML Text Elements
+	section.section.section-sm
+		.container
+			.row
+				.col-lg-10.col-xl-8
+					h6 HTML Text Elements
+					p.text-block
+						a(href='#') Text Link
+						a(href='#').link-hover Hover link
+						span.fw-bold Bold text
+						mark This is a highlighted text
+						span.tooltip-custom(data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Tooltips text') Tooltips
+						span Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for
+						span With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+						span.text-strike This is a strickethrough text
+						span.text-underline This is an underlined text.
+
+	// Unordered List
+	section.section.section-sm
+		.container
+			.row.row-50
+				.col-lg-10.col-xl-8
+					h6 Unordered List
+					p Aenean euismod leo sed urna viverra vestibulum. Quisque finibus gravida felis, vel luctus eros eleifend et. Nunc ut eleifend dolor, at bibendum enim. Duis non laoreet tortor, ut volutpat lorem.
+					ul.list-marked
+						li Consulting
+						li Customer Service
+						li Innovation
+						li Management
+						li Ethics
+					p Mauris auctor, magna egestas blandit maximus, mauris ligula posuere libero, non dapibus turpis risus vel urna. Quisque semper, velit eget bibendum.
+
+	// Ordered List
+	section.section.section-sm
+		.container
+			.row.row-50
+				.col-lg-10.col-xl-8
+					h6 Ordered List
+					p Aenean euismod leo sed urna viverra vestibulum. Quisque finibus gravida felis, vel luctus eros eleifend et. Nunc ut eleifend dolor, at bibendum enim. Duis non laoreet tortor, ut volutpat lorem.
+					ol.list-ordered
+						li Consulting
+						li Customer Service
+						li Innovation
+						li Management
+						li Ethics
+					p Mauris auctor, magna egestas blandit maximus, mauris ligula posuere libero, non dapibus turpis risus vel urna. Quisque semper, velit eget bibendum.
+
+	// Centered image
+	section.section.section-sm
+		.container
+			.row
+				.col-lg-10.col-xl-8
+					h6 Centered image
+					figure.figure-light
+						+jpg('typography-1-770x456', 'img-centered')
+						figcaption: p Our Team
+
+					p Curabitur non metus aliquam, tincidunt nisl non, laoreet turpis. Donec dignissim, mauris ac congue cursus, arcu nisl ultrices dolor, ac viverra mi est a mi. In nec iaculis urna, id porta augue. Vestibulum sit amet ex a mauris ornare rhoncus in in libero.
+
+	// Left aligned image
+	section.section.section-sm
+		.container: .row: .col-lg-10.col-xl-8
+			h6 Left aligned image
+			.row.row-30
+				.col-md-6: +jpg('typography-1-770x456')
+				.col-md-6: p Curabitur non metus aliquam, tincidunt nisl non, laoreet turpis. Donec dignissim, mauris ac congue cursus, arcu nisl ultrices dolor, ac viverra mi est a mi. In nec iaculis urna, id porta augue. Vestibulum sit amet ex a mauris ornare rhoncus in in libero. Pellentesque habitant morbi tristique senectus et netus turpis egestas.
+
+	// Right aligned image
+	section.section.section-sm.section-last
+		.container: .row: .col-lg-10.col-xl-8
+			h6 Right aligned image
+			.row.row-30.flex-md-row-reverse
+				.col-md-6: +jpg('typography-1-770x456')
+				.col-md-6: p Curabitur non metus aliquam, tincidunt nisl non, laoreet turpis. Donec dignissim, mauris ac congue cursus, arcu nisl ultrices dolor, ac viverra mi est a mi. In nec iaculis urna, id porta augue. Vestibulum sit amet ex a mauris ornare rhoncus in in libero. Pellentesque habitant morbi tristique senectus et netus turpis egestas. 
+
+	// Page Footer
+	include ../sections/_footer-minimal

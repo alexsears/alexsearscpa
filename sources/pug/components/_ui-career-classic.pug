@@ -1,0 +1,12 @@
+mixin career-classic(obj)
+	// Career Classic
+	article.career-classic&attributes(attributes)
+		h4.career-classic-title: a(href=obj.link ? obj.link: 'single-job.html')=obj.title
+		.career-classic-divider
+		if(obj.list)
+			ul.career-classic-list
+				each item in obj.list
+					li
+						span.icon(class=item.iconClass)
+						span=item.text
+		block

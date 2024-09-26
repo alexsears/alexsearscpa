@@ -1,0 +1,32 @@
+extends  ../_skeleton
+
+//- Includes
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Pricing'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// 4 Column Layout
+	section.section.section-lg.text-center
+		.container
+			h3 4 Column Layout
+			p: span.text-width-1 We understand the needs of modern companies, and that’s why we made our pricing policy affordable for every business owner. You can choose a suitable pricing plan below.
+			include ../includes/_pricing-group-modern
+				
+
+	// 3 Column Layout
+	section.section.section-lg.bg-gray-100
+		.container
+			h3.text-center 3 Column Layout
+			include ../includes/_row-pricing-3-columns
+						
+			
+	// Page Footer
+	include ../sections/_footer-minimal

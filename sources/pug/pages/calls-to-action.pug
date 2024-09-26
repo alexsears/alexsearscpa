@@ -1,0 +1,47 @@
+extends  ../_skeleton
+
+//- Includes
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Calls to Action'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Wide CTA
+	.section-sm.section-first
+		.container: h6 Wide CTA
+		include ../sections/_section-wide-cta
+
+
+	// Thin CTA
+	.section-sm
+		.container: h6 Thin CTA
+		include ../sections/_section-thin-cta
+
+
+	// Centered CTA
+	.section-sm
+		.container: h6 Centered CTA
+		include ../sections/_section-centered-cta
+
+
+	// Woman CTA
+	.section-sm
+		.container: h6 Woman CTA
+		include ../sections/_section-woman-cta
+
+
+	// Man CTA
+	.section-sm.section-last
+		.container: h6 Man CTA
+		include ../sections/_section-man-cta
+
+			
+	// Page Footer
+	include ../sections/_footer-minimal

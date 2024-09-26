@@ -1,0 +1,100 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+include ../components/_ui-career-classic
+
+block variables
+	- var activeCategory = 'services'
+	- var pageName = 'Services'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	
+	// A Few Words About Us
+	section.section.section-lg.bg-gray-100
+		.container
+			.row.row-50.justify-content-center.justify-content-lg-between
+				.col-md-10.col-lg-6.col-xl-5
+					h3 A Few Words About Us
+					p We are a team of talented marketers who happen to love creating smart ideas for those who will have us. We use our creative potential to provide the smartest ideas.
+					p We have a wide range of experience, expertise and tools to create and implement your campaigns, from carefully curating awesome content to optimising it with our great SEO powers as well as outdoor marketing skills.
+					a.button.button-lg.button-primary.button-winona(href='about-us.html') Learn more
+
+				.col-md-10.col-lg-6
+					+jpg('services-1-570x368', 'img-responsive')
+
+	// Services
+	section.section-lg.text-center
+		.container
+			h3 Services
+			p: span.text-width-1 As the most qualified accounting services provider, we offer an amazing variety of financial solutions designed to help you solve all bookkeeping issues, no matter big or small.
+			.row.row-50.row-xxl-70.offset-top-2
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-1-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') Cash Management
+
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-2-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') Payments
+
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-3-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') M&A Assistance
+
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-4-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') Local Expertise
+
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-5-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') Video & Photo Production
+
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-6-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') Graphic Design
+
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-7-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') Strategy
+
+				.col-sm-6.col-lg-3
+					// Thumbnail Light
+					article.thumbnail-light
+						a.thumbnail-light-media(href='single-service.html'): +jpg('service-thumbnail-8-270x300', 'thumbnail-light-image')
+						h5.thumbnail-light-title: a(href='single-service.html') Branding
+
+	include ../sections/_section-man-cta
+		
+	// Testimonials
+	section.section.section-lg
+		.container
+			h3.text-center Testimonials
+			include ../includes/_owl-testimonials-2-cols
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

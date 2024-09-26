@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <title>Audit and Assurance Services | CPA Firm</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Work+Sans:300,700,800%7COswald:300,400,500">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" id="main-styles-link">
+</head>
+<body>
+    <div class="page">
+        <header class="section page-header">
+            <!-- RD Navbar-->
+            <div class="rd-navbar-wrap">
+                <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-fixed" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                    <div class="rd-navbar-aside-outer">
+                        <div class="rd-navbar-aside">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <!-- RD Navbar Toggle-->
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                                <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="{{ url_for('serve_index') }}"><img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/></a>
+                            </div>
+                            <div class="rd-navbar-collapse">
+                                <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
+                                <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
+                                    <article class="unit align-items-center">
+                                        <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-phone"></span></div>
+                                        <div class="unit-body">
+                                            <ul class="list-0">
+                                                <li><a class="link-default" href="tel:8326770085">832-677-0085</a></li>
+                                                <li><a class="link-default" href="mailto:info@alexsearscpa.com">info@alexsearscpa.com</a></li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                    <article class="unit align-items-center">
+                                        <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-map-marker"></span></div>
+                                        <div class="unit-body"><a class="link-default" href="#"> Katy, TX 77494</a></div>
+                                    </article><a class="button button-primary-outline button-winona" href="{{ url_for('serve_contacts') }}">Request a call</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rd-navbar-main-outer">
+                        <div class="rd-navbar-main">
+                            <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                                <!-- RD Navbar Search-->
+                                <div class="rd-navbar-search" id="rd-navbar-search-1">
+                                    <button class="rd-navbar-search-toggle" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
+                                    <form class="rd-search" action="{{ url_for('serve_search_results') }}" data-search-live="rd-search-results-live-1" method="GET">
+                                        <div class="form-wrap">
+                                            <label class="form-label" for="rd-navbar-search-form-input-1">Search...</label>
+                                            <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
+                                            <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
+                                        </div>
+                                        <button class="rd-search-form-submit fa-search" type="submit"></button>
+                                    </form>
+                                </div>
+                                <!-- RD Navbar Nav-->
+                                <ul class="rd-navbar-nav">
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_index') }}">Home</a></li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_about_us') }}">About Us</a></li>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_services') }}">Our Services</a>
+                                        <!-- RD Navbar Dropdown-->
+                                        <ul class="rd-menu rd-navbar-dropdown">
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_accounting_services') }}">Accounting Services</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_tax_services') }}">Tax Services</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_consulting') }}">Consulting</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_audit_and_assurance') }}">Audit & Assurance</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_financial_planning') }}">Financial Planning</a></li>
+                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_business_advisory') }}">Business Advisory</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url_for('serve_contacts') }}">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- Breadcrumbs -->
+        <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url({{ url_for('static', filename='images/breadcrumbs-image-1.jpg') }});">
+            <div class="container breadcrumbs-custom-container">
+                <div class="breadcrumbs-custom-main">
+                    <h6 class="breadcrumbs-custom-subtitle title-decorated">Services</h6>
+                    <h1 class="breadcrumbs-custom-title">Audit and Assurance</h1>
+                </div>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="{{ url_for('serve_index') }}">Home</a></li>
+                    <li><a href="{{ url_for('serve_services') }}">Services</a></li>
+                    <li class="active">Audit and Assurance</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Base typography  -->
+        <section class="section section-sm section-first">
+            <div class="container">
+                <div class="row row-50">
+                    <div class="col-xl-8">
+                        <h2>Audit and Assurance Services</h2>
+                        <p>At Katy Accounting Firm, we deliver robust audit and assurance services designed to enhance the reliability of information prepared by clients for use by investors, creditors, and other stakeholders. Our approaches are tailored to the size and nature of your organization, ensuring thorough compliance and insightful results.</p>
+
+                        <h3>External Audits</h3>
+                        <p>Our external audits provide an independent examination of your financial statements, which helps in establishing trust and credibility with stakeholders. We ensure that all financial statements fairly represent the company's fiscal positioning in accordance with generally accepted accounting principles (GAAP).</p>
+
+                        <h3>Internal Audits</h3>
+                        <p>We conduct internal audits to evaluate and improve the effectiveness of risk management, control, and governance processes. This proactive service identifies potential issues before they evolve into real problems, helping streamline operations and enhance efficiency.</p>
+
+                        <h3>Regulatory Compliance Audits</h3>
+                        <p>With regulatory requirements becoming more stringent, our compliance audit services ensure that your business adheres to laws, rules, regulations, and policies. We help you navigate the complexities of regulatory frameworks, avoiding financial penalties and reputational damage.</p>
+
+                        <h3>Financial Statement Reviews</h3>
+                        <p>Alongside full audits, we offer financial statement reviews for clients who require assurance about the accuracy of their financial statements but do not need a full audit. This service involves less intensive examination and is more cost-effective, suitable for smaller businesses or those in less regulated industries.</p>
+
+                        <h3>Specialized Audits</h3>
+                        <p>We provide specialized audits tailored to industry-specific requirements or operational necessities, such as forensic audits for suspected fraudulent activities, or IT audits for system security and data integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Footer-->
+        <footer class="section footer-minimal bg-gray-700">
+            <div class="container"> 
+                <div class="footer-minimal-inner"><a class="brand" href="{{ url_for('serve_index') }}"><img src="{{ url_for('static', filename='images/logo-light-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-light-342x78.png') }}"/></a>
+                    <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none"/><a href="#">Terms of Use</a><span> and</span><span>&nbsp;</span><a href="{{ url_for('serve_privacy_policy') }}">Privacy Policy</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="preloader"> 
+        <div class="preloader-logo">
+            <img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="Katy Accounting Firm" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/>
+        </div>
+        <div class="preloader-body">
+            <div id="loadingProgressG">
+                <div class="loadingProgressG" id="loadingProgressG_1"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.preloader').style.display = 'none';
+        });
+    </script>
+    </body>
+    </html>

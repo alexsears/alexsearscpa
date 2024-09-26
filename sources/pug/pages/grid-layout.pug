@@ -1,0 +1,107 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-thumbnail-classic
+
+block variables
+	- var activeCategory = 'portfolio'
+	- var pageName = 'Grid Layout'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	section.section.section-lg.oh
+		.container
+			// Isotope Filters
+			.isotope-filters.isotope-filters-modern
+				button.isotope-filters-toggle.button.button-sm.button-primary(data-custom-toggle='#isotope-filters', data-custom-toggle-disable-on-blur="true") Filter
+					span.caret
+				ul.isotope-filters-list#isotope-filters
+					li: a.active(data-isotope-filter='*', data-isotope-group='portfolio', href='#') All Types
+					li: a(data-isotope-filter='Type 1', data-isotope-group='portfolio', href='#') Type 1 
+					li: a(data-isotope-filter='Type 2', data-isotope-group='portfolio', href='#') Type 2
+					li: a(data-isotope-filter='Type 3', data-isotope-group='portfolio', href='#') Type 3 
+
+			.isotope.isotope-responsive.row(data-isotope-layout='fitRows' data-isotope-group='portfolio')
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 3')
+					+thumbnail-classic({
+						img: 'grid-layout-1-370x256',
+						link: 'single-project.html',
+						title: 'iGadget',
+						text: 'Art Direction, Design, Production'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-classic({
+						img: 'grid-layout-2-370x256',
+						link: 'single-project.html',
+						title: 'Computerize Ltd.',
+						text: 'Event Organization, Branding'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-classic({
+						img: 'grid-layout-3-370x256', 
+						link: 'single-project.html',
+						title: 'MNGRZ Co.',
+						text: 'Strategic Planning, Digital Marketing'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-classic({
+						img: 'grid-layout-4-370x256',
+						link: 'single-project.html',
+						title: 'CompuTerra',
+						text: 'Email Marketing, Branding'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 3')
+					+thumbnail-classic({
+						img: 'grid-layout-5-370x256',
+						link: 'single-project.html',
+						title: 'Fruits Inc.',
+						text: 'Customer Support, Web Design'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-classic({
+						img: 'grid-layout-6-370x256',
+						link: 'single-project.html',
+						title: 'Accessories',
+						text: 'Content Creation, SEO'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 3')
+					+thumbnail-classic({
+						img: 'grid-layout-7-370x256',
+						link: 'single-project.html', 
+						title: 'NewOffice Ltd.',
+						text: 'Web Design, Accounting, SMM'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 1')
+					+thumbnail-classic({
+						img: 'grid-layout-8-370x256',
+						link: 'single-project.html',
+						title: 'EcoWorld',
+						text: 'Copywriting, TV Advertising'
+					}).thumbnail-classic-sm
+
+				.col-sm-6.col-lg-4.isotope-item(data-filter='Type 2')
+					+thumbnail-classic({
+						img: 'grid-layout-9-370x256',
+						link: 'single-project.html',
+						title: 'Stationery Inc.',
+						text: 'Branding, Design, Marketing Strategy'
+					}).thumbnail-classic-sm
+		
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

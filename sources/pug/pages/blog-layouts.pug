@@ -1,0 +1,65 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Blog Layouts'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// 3 Column Layout
+	section.section.section-lg.bg-gray-100.text-center
+		.container
+			h3 3 Column Layout
+			include ../includes/_row-blog-3-cols
+
+	// 2 Column Layout
+	section.section.section-lg.text-center
+		.container
+			h3 2 Column Layout
+			.row.row-50
+				.col-md-6
+					// Post Modern
+					article.post-modern
+						a.post-modern-media(href=links.post): +jpg('grid-blog-1-571x353')
+						h4.post-modern-title: a(href=links.post) Managing Your Finances
+						ul.post-modern-meta
+							li by Theresa Barnes
+							li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+							li: a.button-winona(href='#') News
+						p Personal financial management is a subject that is not taught in many schools, but is something that nearly everyone has to deal with in their lives later on. Here are some statistics...
+
+				.col-md-6
+					// Post Modern
+					article.post-modern
+						a.post-modern-media(href=links.post): +jpg('grid-blog-2-571x353')
+						h4.post-modern-title: a(href=links.post) 5 Reasons Why You Need an Accountant
+						ul.post-modern-meta
+							li by Theresa Barnes
+							li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+							li: a.button-winona(href='#') Advertising
+						p As your business — and revenue — grow, managing your financials may become a task you don’t have the time or knowledge to manage. Specifically, when it comes avoiding legal and...
+
+			a.button.button-primary-outline.button-winona(href='grid-blog.html') View all Blog posts
+			
+	// News Posts Layout
+	section.section.section-lg.bg-gray-100
+		.container
+			h3.text-center News Posts Layout
+			include ../includes/_row-news-post-layout
+
+	// Recent News
+	section.section.section-lg.text-center
+		.container
+			h3 Recent News
+			include ../includes/_row-blog-4-cols
+			a.button.button-primary-outline.button-winona(href='grid-blog.html') View all Blog posts
+					
+	// Page Footer
+	include ../sections/_footer-minimal

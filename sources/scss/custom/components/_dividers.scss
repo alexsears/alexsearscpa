@@ -1,0 +1,35 @@
+/*
+*
+* Dividers
+*/
+
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: $hr-border-width solid $hr-border-color;
+}
+
+
+%context-dark {
+	hr {
+		border-top-color: $gray-400;
+	}
+}
+
+.divider-small {
+	font-size: 0;
+	line-height: 0;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 70px;
+		height: 2px;
+		background-color: $primary;
+	}
+}
+
+.divider-small + h3, .divider-small + .heading-3,
+.divider-small-outer + h3, .divider-small-outer + .heading-3 {
+	margin-top: 20px;
+}

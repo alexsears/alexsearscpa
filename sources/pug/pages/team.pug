@@ -1,0 +1,29 @@
+extends  ../_skeleton
+
+//- Includes
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Team'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// 4 Column Layout
+	section.section.section-lg.text-center
+		.container
+			h3 4 Column Layout
+			include ../includes/_row-team-4-cols
+
+	// Our Team
+	include ../sections/_section-our-team
+
+	// Who We Are
+	include ../sections/_section-team-3-cols
+
+	// Page Footer
+	include ../sections/_footer-minimal

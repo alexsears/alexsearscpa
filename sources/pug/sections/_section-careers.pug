@@ -1,0 +1,37 @@
+include ../components/_ui-career-classic
+
+section.section.section-lg.bg-gray-100.text-center
+	.container
+		h3.wow-outer: span.wow.slideInDown Careers
+		.row.row-50
+			.col-md-6.col-lg-4.wow-outer
+				+career-classic({
+					title: 'Customer Assistant',
+					list: [
+						{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+						{iconClass: 'mdi mdi-map-marker', text: 'Katy'}
+					]
+				}).wow.slideInRight
+					p Want to build your future with the biggest customer service provider in the US? Then apply for this job and become one of the Katy Accounting Firm customer care voices.
+
+			.col-md-6.col-lg-4.wow-outer
+				+career-classic({
+					title: 'Customer Care Manager',
+					list: [
+						{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+						{iconClass: 'mdi mdi-map-marker', text: 'Katy'}
+					] 
+				}).wow.slideInRight(data-wow-delay='.05s')
+					p Katy Accounting Firm is looking for outstanding managers to work with Customer Care Agents whose role will be to answer questions and resolve customer issues.
+
+			.col-md-6.col-lg-4.wow-outer
+				+career-classic({
+					title: 'Technical Support Agent',
+					list: [
+						{iconClass: 'mdi mdi-calendar-clock', text: 'Full Time'},
+						{iconClass: 'mdi mdi-map-marker', text: 'Katy'}
+					]
+				}).wow.slideInRight(data-wow-delay='.1s')
+					p We are looking for full-time Technical Support Representatives in Katy, TX. Our team needs specialists who areready to improve the quality of customer care.
+		.wow-outer.button-outer
+			a.button.button-lg.button-primary.button-winona.wow.slideInUp(href='careers.html') Join Us

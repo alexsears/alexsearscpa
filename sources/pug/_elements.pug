@@ -1,0 +1,105 @@
+function getImageSize(name) {
+	try { return name.match('[0-9]+(x)[0-9]+')[0].split('x'); }
+	catch ( error ) {
+		throw new Error('Error in function getImageSize:\n' + error);
+	}
+}
+
+//- Get menu branch by category name
+function getMenuCategory(category) {
+	for (var i = 0; i < menu.length; i++) {
+		if (menu[i].category === category) {
+			return menu[i];
+		}
+	}
+	return undefined;
+}
+
+//- Any page title to *.html link
+function nameToLink(name) {
+	try { return name.trim().replace(/\s/g, '-').replace(/[\(\)]/g, '').toLowerCase() + '.html'; }
+	catch ( error ) {
+		throw new Error('Error in function nameToLink:\n' + error);
+	}
+}
+
+
+//- Img image
+mixin img(name, className)
+	- var size = getImageSize(name);
+	- var ext = name.split('.')[1];
+
+	img(src='static/images/' + name, alt='', width=size[0], height=size[1], class=className)&attributes(attributes)
+
+
+//- Jpg image
+mixin jpg(name, className)
+	- var size = getImageSize(name);
+	img(src='static/images/' + name + '.jpg', alt='', width=size[0], height=size[1], class=className)&attributes(attributes)
+
+
+//- Png image
+mixin png(name, className)
+	- var size = getImageSize(name);
+	img(src='static/images/' + name + '.png', alt='', width=size[0], height=size[1], class=className)&attributes(attributes)
+
+
+//- Loop without indexing mixin
+mixin loop(count)
+	- for (var i = 0; i < count; i++)
+		block
+
+
+//- Parallax Section
+mixin parallax(obj)
+	section.section.parallax-container(data-parallax-img='static/images/' + obj.img + '.jpg')&attributes(attributes)
+		.parallax-content(class= obj.innerClass)
+			block
+				
+//- Parallax Block
+mixin parallax-block(obj)
+	.parallax-container(data-parallax-img='static/images/' + obj.img + '.jpg')&attributes(attributes)
+		.parallax-content(class= obj.innerClass)
+			block
+
+
+//- Breadcrumbs 
+mixin breadcrumbs(obj)
+	- var activeItemName= obj.path.pop();
+	- var category = getMenuCategory(obj.category);
+
+	// Breadcrumbs 
+	section.breadcrumbs-custom.bg-image.context-dark(style='background-image: url(static/images/' + (obj.bgImage ? obj.bgImage : 'breadcrumbs-image-1') + '.jpg);'): .breadcrumbs-custom-inner
+		.container.breadcrumbs-custom-container
+			.breadcrumbs-custom-main
+				h6.breadcrumbs-custom-subtitle.title-decorated=category.title
+				h1.breadcrumbs-custom-title=activeItemName
+			ul.breadcrumbs-custom-path
+				li: a(href='index.html') Home
+				- if (typeof(category) !== 'undefined' && (category.title.toLowerCase() !== activeItemName.toLowerCase()))
+					li: a(href=category.link ? category.link : nameToLink(category.title))=category.title
+					-for( var i = 0; i < obj.path.length; i++)
+						li: a(href=obj.path[i].link ? obj.path[i].link : nameToLink(obj.path[i].title))=obj.path[i].title
+
+				li.active=activeItemName
+				
+		
+
+//- Copyright
+mixin rights(modClass)
+	// Rights
+	p.rights(class=modClass)
+		span &copy;&nbsp;
+		span.copyright-year
+		span &nbsp;
+		span All Rights Reserved.
+		span &nbsp;
+		br.d-sm-none
+		a(href='#') Terms of Use
+		span  and
+		span &nbsp;
+		a(href='privacy-policy.html') Privacy Policy
+
+mixin quote-mark 
+	svg(x='0px', y='0px', width='35px', height='25px', viewbox='0 0 35 25')&attributes(attributes)
+		path(d='M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z')

@@ -1,0 +1,57 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+include ../components/_ui-career-classic
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Screens'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Overlapping screen 
+	.section-sm.section-first
+		.container: h6 Overlapping screen
+		include ../sections/_section-fscreen-overlap
+
+	// Light slider screen
+	.section-sm
+		.container: h6 Light slider screen
+		include ../sections/_section-slider-light
+
+	// Dark screen
+	.section-sm
+		.container: h6 Dark screen
+		include ../sections/_section-fscreen-dark
+
+	// Centered screen
+	.section-sm
+		.container: h6 Centered screen
+		include ../sections/_section-fscreen-centered
+
+	// Business screen
+	.section-sm
+		.container: h6 Business screen
+		include ../sections/_section-slider-business
+			
+			
+	// Minimal screen
+	.section-sm
+		.container: h6 Minimal screen
+		include ../sections/_section-slider-minimal
+
+	// Half screen
+	.section-sm.section-last
+		.container: h6 Half screen
+		include ../sections/_section-fscreen-halfscreen
+
+	// Page Footer
+	include ../sections/_footer-minimal

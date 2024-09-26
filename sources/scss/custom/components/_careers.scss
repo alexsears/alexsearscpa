@@ -1,0 +1,60 @@
+/*
+*
+* Careers
+*/
+
+//
+// Table of Contents
+//
+// Career Classic
+//
+
+//
+// Career Classic
+//
+.career-classic {
+	text-align: left;
+}
+
+.career-classic-divider {
+	border-bottom: 1px solid $gray-300;
+}
+
+.career-classic-list {
+	@include spacing(40px, 10px);
+
+	> li {
+		display: inline-block;
+		vertical-align: middle;
+		white-space: nowrap;
+
+		> * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		> * + * { margin-left: 8px; }
+	}
+
+
+	.icon {
+		font-size: 1.25em;
+		color: $primary;
+	}
+}
+
+* + .career-classic-divider { margin-top: 10px; }
+* + .career-classic-list { margin-top: 15px; }
+
+@include media-breakpoint-down(sm) {
+  .career-classic {
+		max-width: 360px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	* + .career-classic-divider { margin-top: 20px; }
+	* + .career-classic-list { margin-top: 20px; }
+}

@@ -1,0 +1,32 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Accordions'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Accordion & skill bars
+	section.section.section-lg
+		.container
+			h6 Accordion & skill bars
+			include ../includes/_row-accordion-skill-bars
+
+	// Accordion & photo
+	section.section.section-md
+		.container
+			h6 Accordion & photo
+			include ../includes/_row-accordion-and-photo
+
+	// Page Footer
+	include ../sections/_footer-minimal

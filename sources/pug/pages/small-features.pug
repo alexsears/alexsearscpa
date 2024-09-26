@@ -1,0 +1,126 @@
+extends  ../_skeleton
+
+//- Includes
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Small Features'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Counters
+	section.section.section-lg.text-center
+		.container
+			h3 Counters
+			p: span.text-width-1 Our advertising agency has been leading the industry since our establishment 12 years ago. Our clients trust us with their marketing and promotional campaigns, and here's why.
+			.row.row-50
+				.col-6.col-md-3
+					// Counter Minimal
+					article.counter-minimal
+						.counter-minimal-icon.fl-bigmug-line-circular220
+						.counter-minimal-main: .counter 12
+						h5.counter-minimal-title International Awards
+
+				.col-6.col-md-3
+					// Counter Minimal
+					article.counter-minimal
+						.counter-minimal-icon.fl-bigmug-line-graphical8
+						.counter-minimal-main: .counter 238
+						h5.counter-minimal-title Successful Projects
+
+				.col-6.col-md-3
+					// Counter Minimal
+					article.counter-minimal
+						.counter-minimal-icon.fl-bigmug-line-favourites5
+						.counter-minimal-main: .counter 8
+						h5.counter-minimal-title Years of Experience
+
+				.col-6.col-md-3
+					// Counter Minimal
+					article.counter-minimal
+						.counter-minimal-icon.fl-bigmug-line-user144
+						.counter-minimal-main: .counter 54
+						h5.counter-minimal-title Qualified Employees
+
+
+	// Small Features
+	include ../sections/_section-small-features
+
+	// Light 4 Column Layout
+	section.section.section-lg.text-center
+		.container
+			h3 Light 4 Column Layout
+			p: span.text-width-1 We provide a variety of marketing and promotion services to enable you and your business with innovative tools and strategies and attract more customers.
+			.row.row-50.row-xxl-70.offset-top-2
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.fl-bigmug-line-flag53
+						h4.box-light-title Branding
+						p Whether you’re looking to launch a brand or you just need help clarifying your message, we can help you.
+
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.fl-bigmug-line-equalization3
+						h4.box-light-title Strategy
+						p Our experts can help you develop your marketing strategy and integrate it into your advertising campaign.
+
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.fl-bigmug-line-video163
+						h4.box-light-title Video Production
+						p Need a professional advertising video for your campaign? We can offer anything you need.
+
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.fl-bigmug-line-file69
+						h4.box-light-title Copywriting
+						p Our experienced copywriters will gladly provide you with high-quality texts for your websites or advertisements.
+
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.fl-bigmug-line-share27
+						h4.box-light-title SMM
+						p We can develop a simple social media marketing plan designed specifically for your business and your needs.
+
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.fl-bigmug-line-store10
+						h4.box-light-title Outdoor Advertising
+						p If you need to create your next out-of-home campaign or lease your space, we can satisfy your advertising needs.​
+
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.box-light-title.fl-bigmug-line-square160
+						h4.box-light-title Graphic Design
+						p Our graphic design services include printing brochures, banners and logos for your advertising campaign.
+
+				.col-sm-6.col-md-4.col-lg-3
+					// Box Light
+					article.box-light
+						.box-light-icon.fl-bigmug-line-megaphone11
+						h4.box-light-title Marketing
+						p This service includes a variety of promotional techniques and methods that can boost your company’s products.
+
+	// Stroke Icons 3 Column Layout
+	section.section.section-lg.bg-gray-100.text-center
+		.container
+			h3 Stroke Icons 3 Column Layout
+			include ../includes/_row-stroke-icons
+
+	// Contact Info
+	include ../sections/_section-contact-info
+
+	// Page Footer
+	include ../sections/_footer-minimal

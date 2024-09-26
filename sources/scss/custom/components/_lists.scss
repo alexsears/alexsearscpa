@@ -1,0 +1,293 @@
+/*
+*
+* Lists
+*/
+
+// Vertical list
+.list {
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+.list-xs > li + li { margin-top: 8px; }
+.list-sm > li + li { margin-top: 15px; }
+.list-md > li + li { margin-top: 18px; }
+.list-lg > li + li { margin-top: 25px; }
+
+.list-xl  {
+	li + li { margin-top: 30px; }
+	
+	@include media-breakpoint-up(xl) {
+		* + p { margin-top: 18px; }
+	} 
+	
+	@include media-breakpoint-up(xxl) {
+	  * + p { margin-top: 24px; } 
+	} 
+} 
+
+@include media-breakpoint-up(md) {
+	.list-xl > li + li { margin-top: 60px; }
+}
+
+@include media-breakpoint-up(xxl) {
+	.list-xl > li + li { margin-top: 78px; } 
+} 
+
+//
+// List inline
+//
+.list-inline {
+	> li {
+		display: inline-block;
+	}
+}
+
+html {
+	.list-inline-md {
+		@include spacing(20px, 8px);
+
+		@include media-breakpoint-up(lg) {
+			@include spacingX(28px);
+		}
+	}
+}
+
+//
+// List terms
+//
+.list-terms {
+	dt {
+		font-size: 20px;
+		line-height: 1.3;
+		font-weight: 700;
+		letter-spacing: 0;
+		color: $gray-700;
+	}
+	
+	dt + dd { margin-top: 8px; }
+	dd + dt { margin-top: 25px; }
+}
+
+* + .list-terms { margin-top: 25px; }
+.list-terms + .privacy-link { margin-top: 20px; } 
+
+@include media-breakpoint-up(md) {
+  .list-terms {
+		dt {
+			font-size: 24px;
+		}
+		
+		dd + dt { margin-top: 40px; }
+	} 
+}
+
+@include media-breakpoint-up(lg) {
+	.list-terms {
+		dt + dd { margin-top: 18px; }
+		dd + dt { margin-top: 55px; }
+	}
+}
+
+@include media-breakpoint-up(xl) {
+   .list-terms {
+		 dt {
+			 max-width: 85%;
+		 }
+	 }
+} 
+
+@include media-breakpoint-up(xxl) {
+	.list-terms {
+		dd + dt { margin-top: 75px; }
+	}
+	.list-terms + .privacy-link { margin-top: 75px; }
+} 
+
+//
+// Index list
+//
+.index-list {
+	counter-reset: li;
+
+	> li {
+		.list-index-counter {
+			&:before {
+				content: counter(li, decimal-leading-zero);
+				counter-increment: li;
+			}
+		}
+	}
+}
+
+//
+// Marked list
+//
+.list-marked {
+	text-align: left;
+
+	> li {
+		text-indent: -25px;
+		padding-left: 25px;
+		
+		&::before {
+			position: relative;
+			top: 1px;
+			display: inline-block;
+			left: 25px;
+			min-width: 25px;
+			content: '\f14f';
+			font: 400 14px 'Material Design Icons';
+			line-height: inherit;
+			color: $gray-300;
+		}
+	}
+
+	> li + li { margin-top: 9px; }
+}
+
+* + .list-marked { margin-top: 15px; }
+
+//
+// Ordered List
+//
+.list-ordered {
+	counter-reset: li;
+	text-align: left;
+
+	> li {
+		position: relative;padding-left: 25px;
+
+		&:before {
+			content: counter(li, decimal) '.';
+			counter-increment: li;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 15px;
+			color: $gray-300;
+		}
+	}
+
+	> li + li { margin-top: 9px; }
+}
+
+* + .list-ordered { margin-top: 15px; }
+
+
+//
+// List Nav
+//
+.list-nav {
+	@include spacing(20px, 10px);
+	font-family: $font-family-sec;
+	font-weight: 400;
+	font-size: .875em;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: $gray-700;
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	a:hover {
+		color: $primary;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.list-nav {
+		@include spacingX(25px);
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.list-nav {
+		@include spacingX(55px);
+	}
+}
+
+%context-dark {
+	.list-nav {
+		color: $white;
+
+		a:hover {
+			color: $gray-300;
+		}
+	}
+}
+
+
+// List Inline Bordered
+.list-inline-bordered {
+	@include spacingX(36px);
+	color: $gray-700;
+
+	* {
+		color: inherit;
+	}
+	
+	> li >  button {
+		@include reset-button;
+		transition: .22s;
+	}
+
+	> li {
+		display: inline-block;
+		line-height: 24px;
+		
+		&:not(:last-child) {
+			border-right: 1px solid $gray-400;
+		}
+	}
+}
+
+%context-dark {
+	.list-inline-bordered {
+		color: $white;
+
+		
+		button.active,
+		button:hover {
+			color: $gray-300;
+		}
+	}
+}
+
+.list-inline-comma {
+	> li {
+		display: inline-block;
+		color: $primary;
+		&:not(:last-child) {
+			&::after {
+				content: '\002C';
+			}	
+		}
+	}
+	
+	a {
+		color: inherit;
+	}
+	
+	a:hover {
+		color: $primary-darken;
+	}
+}
+
+.list-inline-comma-default {
+	> li {
+		color: $body-color;
+	}
+
+	a:hover {
+		color: $primary;
+	}
+}

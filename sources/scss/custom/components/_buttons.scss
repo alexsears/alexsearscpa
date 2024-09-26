@@ -1,0 +1,312 @@
+/*
+*
+* Buttons
+*/
+
+// Button General Styles
+
+.button {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	@include btn-size($input-btn-padding-y, $input-btn-padding-x, $input-btn-font-size, $input-btn-line-height);
+	border: 2px solid;
+	border-radius: $btn-border-radius;
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	letter-spacing: $btn-letter-spacing;
+	text-transform: $btn-text-transform;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
+	cursor: pointer;
+	vertical-align: middle;
+	user-select: none;
+	transition: 0.25s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.button-block {
+	display: block;
+	width: 100%;
+}
+
+//
+// Appearance style
+// 
+
+.button-default {
+	@include btn-variant($gray-300, $gray-700, $gray-700, $white, $primary, $primary);
+}
+
+.button.button-primary {
+	@include btn-variant($white, $primary, $primary, $white, $primary-darken, $primary-darken);
+}
+
+html .button.button-primary-lighten {
+	@include btn-variant($white, $primary, $primary, $white, $primary-lighten, $primary-lighten);
+}
+
+// Outline
+.button-primary-outline {
+	@include btn-variant($gray-700, transparent, $primary, $white, $primary, $primary);
+}
+
+// Social
+.button.button-facebook {
+	@include btn-variant($white, $facebook, $facebook, $white, lighten($facebook, 5%), lighten($facebook, 5%));
+}
+
+.button.button-twitter {
+	@include btn-variant($white, $twitter, $twitter, $white, lighten($twitter, 5%), lighten($twitter, 5%));
+}
+
+.button.button-google {
+	@include btn-variant($white, $google, $google, $white, lighten($google, 5%), lighten($google, 5%));
+}
+
+//
+// Button effects
+//
+.button-winona {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+
+	.content-original,
+	.content-dubbed {
+		vertical-align: middle;
+		transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+	}
+
+	.content-original {
+		display: block;
+	}
+
+	.content-dubbed {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 0;
+		opacity: 0;
+		transform: translate3d(0, 0, 0);
+	}
+
+	&:hover {
+		.content-original {
+			opacity: 0;
+			transform: translate3d(0, -30%, 0);
+		}
+
+		.content-dubbed {
+			opacity: 1;
+			transform: translate3d(0, 0, 0) translateY(-50%);
+		}
+	}
+}
+
+//
+// Button Sizes
+// 
+
+.button-sm {
+	@include btn-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, 12px, $input-btn-line-height-sm);
+}
+
+.button-lg {
+	@include btn-size($input-btn-padding-y-lg, 35px, 15px, $input-btn-line-height-lg);
+
+	@include media-breakpoint-up(sm) {
+		font-size: 16px;
+		padding-left: $input-btn-padding-x-lg;
+		padding-right: $input-btn-padding-x-lg;
+	}
+}
+
+.button-lg--smaller {
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+//
+// Button Icon styles
+//
+html .button.button-icon {
+	display: inline-flex;
+}
+
+.button-icon {
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
+
+	.icon {
+		position: relative;
+		top: -1px;
+		display: inline-block;
+		vertical-align: middle;
+		color: inherit;
+		font-size: 1.55em;
+		line-height: 1em;
+		transition: none;
+	}
+
+	&:hover,
+	&:active {
+		.icon {
+			color: inherit;
+		}
+	}
+
+	&-left {
+		.icon { padding-right: 5px; }
+	}
+
+	&-right {
+		flex-direction: row-reverse;
+
+		.icon { padding-left: 8px; }
+	}
+
+	&.button-icon-only {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	&.button-lg {
+		.icon { padding-right: 8px; }
+
+		&.button-icon-right {
+			.icon {
+				padding: 0 0 0 8px;
+			}
+		}
+	}
+
+	&.button-sm {
+		.icon {
+			padding-right: 3px;
+			font-size: 1.33em;
+		}
+
+		&.button-icon-right {
+			.icon {
+				padding: 0 0 0 3px;
+			}
+		}
+	}
+}
+
+//
+// Bootstrap buttons
+//
+
+.btn-primary {
+	border-radius: 3px;
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	transition: .33s;
+
+	&,
+	&:active,
+	&:focus {
+		color: $white;
+		background: $primary;
+		border-color: $primary;
+	}
+
+	&:hover {
+		color: $white;
+		background: $black;
+		border-color: $black;
+	}
+}
+
+//
+// Button Group
+//
+.button-group {
+	display: flex;
+	.button {
+		margin: 0;
+		flex-grow: 1;
+	}
+
+	.button:not(:first-child) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	.button:not(:last-child) {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+//
+// Custom types
+//
+.button-video {
+	position: relative;
+	display: block;
+	border-radius: 50%;
+	transition: .33s;
+	color: $gray-700;
+
+	&::before,
+	&:after {
+		display: block;
+		content: '\f4fc';
+		font-family: 'Material Design Icons';
+		font-size: 64px;
+		line-height: 1;
+		border-radius: 50%;
+	}
+
+	&::before {
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	&::after {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 0;
+		opacity: 0;
+		transform: translate3d(0, -50%, 0);
+		transition: opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+	}
+
+	&:hover {
+		color: $primary;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 0;
+			transition: transform 0.9s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+			transform: scale3d(1.5, 1.5, 1.5);
+		}
+
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
+.button-video-lg {
+	&::before,
+	&:after {
+		font-size: 90px;
+	}
+}
+
+%context-dark {
+	.button-video {
+		color: $white;
+	}
+}

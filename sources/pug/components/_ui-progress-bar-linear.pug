@@ -1,0 +1,8 @@
+mixin progress-bar-linear(progress)
+	// Linear progress bar
+	article.progress-linear(data-duration= progress.duration)&attributes(attributes)
+		.progress-header
+			p= progress.title
+			span.progress-value= progress.valueTo
+		.progress-bar-linear-wrap
+			.progress-bar-linear

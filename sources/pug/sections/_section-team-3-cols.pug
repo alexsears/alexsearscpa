@@ -1,0 +1,30 @@
+section.section.section-lg.section-last.text-center
+	.container
+		h3.wow-outer.text-center: span.wow.slideInDown Who We Are
+		.row.row-50
+			.col-sm-6.col-lg-4.wow-outer
+				// Profile Minimal
+				article.profile-minimal.wow.slideInLeft
+					+jpg('team-2-370x368', 'profile-minimal-image')
+					.profile-minimal-caption
+						h4.profile-minimal-title Jean Thompson
+						p.profile-minimal-position PR Manager
+
+			.col-sm-6.col-lg-4.wow-outer
+				// Profile Minimal
+				article.profile-minimal.wow.slideInLeft(data-wow-delay='.05s')
+					+jpg('team-3-370x368', 'profile-minimal-image')
+					.profile-minimal-caption
+						h4.profile-minimal-title Brian Payne
+						p.profile-minimal-position Marketing Expert
+
+			.col-sm-6.col-lg-4.wow-outer 
+				// Profile Minimal
+				article.profile-minimal.wow.slideInLeft(data-wow-delay='.1s')
+					+jpg('team-1-370x368', 'profile-minimal-image')
+					.profile-minimal-caption
+						h4.profile-minimal-title Nathan Porter
+						p.profile-minimal-position CEO, Founder
+
+		.wow-outer.button-outer
+			a.button.button-lg.button-primary.button-winona.wow.slideInUp(href='about-us.html') View all Team

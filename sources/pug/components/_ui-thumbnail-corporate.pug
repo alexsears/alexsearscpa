@@ -1,0 +1,23 @@
+mixin thumbnail-corporate(obj)
+	// Thumbnail Corporate
+	if(obj.link)
+		article.thumbnail-corporate&attributes(attributes)
+			+jpg(obj.img, 'thumbnail-corporate-image')
+			.thumbnail-corporate-caption
+				p.thumbnail-corporate-title=obj.title
+				if(obj.text)
+					p=obj.text
+				a.thumbnail-corporate-link(href=obj.link)
+					span.icon.mdi.mdi-plus
+					span.icon.mdi.mdi-plus
+			.thumbnail-corporate-dummy 
+		
+	if(obj.original)
+		a.thumbnail-corporate(href=obj.original)&attributes(attributes)
+			+jpg(obj.img, 'thumbnail-corporate-image')
+			.thumbnail-corporate-caption
+				p.thumbnail-corporate-title=obj.title
+				if(obj.text) 
+					p=obj.text
+					
+			.thumbnail-corporate-dummy 

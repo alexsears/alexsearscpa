@@ -1,0 +1,21 @@
+section.section.jumbotron-modern.bg-gray-700.bg-image(style='background-image: url(static/images/bg-image-2.jpg);')
+	.jumbotron-modern-inner
+		.container
+			.jumbotron-modern-content
+				h3.wow-outer: span.wow.slideInUp Search Now &
+				h1.wow-outer.fw-bold: span.wow.slideInDown Get Your Dream Job
+				form.rd-form.form-lg.form-layout-1
+					.form-wrap.form-wrap-main.wow.fadeInLeftSmall(data-wow-delay='.2s')
+						input.form-input#find-a-job-position(name='find-a-job-position')
+						label.form-label(for='find-a-job-position') Position
+
+					.form-wrap.form-wrap-select.wow.fadeInLeftSmall(data-wow-delay='.3s')
+						// Select 2
+						select.form-input.select(name='find-job-location' data-minimum-results-for-search="Infinity")
+							option(value='1') San Francisco
+							option(value='2') Seattle
+							option(value='3') New York
+							option(value='4') Los Angeles
+							option(value='5') Dallas
+
+					.form-wrap.form-wrap-button: button.button.button-lg.button-primary.button-winona.wow.fadeInLeftSmall(data-wow-delay='.4s') Search

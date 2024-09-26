@@ -1,0 +1,233 @@
+/*
+*
+* Offsets
+*/
+
+// Elements offset
+* + p ,
+* + .list-inline-comma {
+	margin-top: 16px;
+}
+
+// Headings
+h3 + p, .heading-3 + p,
+h3 + .p, .heading-3 + .p {
+	margin-top: 18px;
+}
+
+h4 + p, .heading-4 + p,
+h4 + .p, .heading-4 + .p {
+	margin-top: 16px;
+}
+
+* + h1,
+* + .heading-1 {
+	margin-top: 15px; 
+}
+
+h3 + h1, h3 + .heading-1,
+.heading-3 + h1, .heading-3 + .heading-1 {
+	margin-top: 5px;
+}
+
+h6 + h1,
+h6 + .heading-1,
+.heading-6 + h1,
+.heading-6 + .heading-1 {
+	margin-top: 10px;
+}
+
+* + h4,
+* + .heading-4 {
+	margin-top: 15px;
+}
+
+* + h5,
+* + .heading-5 {
+	margin-top: 15px;
+}
+
+// Headings + Paragraph
+h6 + p,
+.heading-6 + p {
+	margin-top: 22px;
+}
+
+// Paragraph + Headings
+p + h2,
+p + .heading-2 {
+	margin-top: 15px;
+}
+
+// Tags + Tags
+p + p {
+	margin-top: 14px;
+}
+
+img + p {
+	margin-top: 15px;
+}
+
+h3 + img {
+	margin-top: 42px;
+}
+
+p + hr { margin-top: 35px; }
+
+// Classes
+* + .row { margin-top: 30px; }
+* + .big { margin-top: 20px; }
+* + .text-block { margin-top: 25px; }
+* + .button, 
+* + .button-outer { margin-top: 25px; }
+* + .list-sm { margin-top: 25px; }
+* + form.form-inline { margin-top: 18px; }
+* + form.rd-form-small { margin-top: 25px; }
+
+html * + .offset-top-1 { margin-top: 40px; }
+html * + .offset-top-2 { margin-top: 25px; }
+html * + .offset-top-3 { margin-top: 20px; }
+html * + .offset-top-4 { margin-top: 18px; }
+html .page * + .offset-top-5 { margin-top: 40px; }
+
+
+// Classes + Tags
+h3 + .row, .heading-3 + .row,
+h3 + .owl-carousel, .heading-3 + .owl-carousel {
+	margin-top: 35px;
+}
+
+// Classes + Classes
+.container + .container { margin-top: 35px; }
+.container + .section { margin-top: 25px; }
+.row + .row { margin-top: 35px; }
+.row + .button-lg { margin-top: 30px; }
+.list-sm + .group-xs { margin-top: 20px; }
+
+@include media-breakpoint-up(md) {
+	* + p,
+	* + .list-inline-comma {
+		margin-top: 20px; 
+	}
+	* + .big { margin-top: 25px; }
+	* + .button,
+	* + .button-outer { margin-top: 34px; }
+	* + .row { margin-top: 40px; }
+	* + .text-block { margin-top: 30px; }
+
+	.container + .section { margin-top: 30px; }
+	.row + .button-lg { margin-top: 45px; }
+
+	html * + .offset-top-2 { margin-top: 60px; }
+}
+
+@include media-breakpoint-up(lg) {
+	* + h1,
+	* + .heading-1 {
+		margin-top: 22px;
+	}
+
+	h3 + p, .heading-3 + p,
+	h3 + .p, .heading-3 + .p {
+		margin-top: 24px;
+	}
+	
+	h3 + .row, .heading-3 + .row,
+	h3 + .owl-carousel, .heading-3 + .owl-carousel {
+		margin-top: 55px;
+	}
+	
+	html * + .offset-top-1 { margin-top: 60px; }
+	html * + .offset-top-3 { margin-top: 30px; }
+	html * + .offset-top-4 { margin-top: 24px; }
+	html .page * + .offset-top-5 { margin-top: 60px; }
+
+	.progress-linear + .button { margin-top: 55px; }
+	.row + .group { margin-top: 45px; }
+}
+
+// Media offsets
+@include media-breakpoint-up(xl) {
+	* + .button, 
+	* + .button-outer { margin-top: 40px; }
+	* + .rd-form { margin-top: 40px; }
+
+	h3 + p, .heading-3 + p,
+	h3 + .p, .heading-3 + .p {
+		margin-top: 30px;
+	}
+
+	html * + .offset-top-1 { margin-top: 70px; }
+	.container + .container { margin-top: 60px; }
+	.row + .row { margin-top: 60px; }
+}
+
+@include media-breakpoint-up(xxl) {
+	h3 + .row, .heading-3 + .row,
+	h3 + .owl-carousel, .heading-3 + .owl-carousel {
+		margin-top: 75px;
+	}
+	
+	html * + .offset-top-1 { margin-top: 144px; }
+	html * + .offset-top-2 { margin-top: 75px; }
+
+	.row + .button-lg { margin-top: 70px; }
+} 
+
+// Range spacing
+.row-0 { 
+	@include grid-offset(0px);
+}
+
+.row-10 {
+	@include grid-offset(10px);
+}
+
+.row-x-10 {
+	@include grid-offset(10px);
+	margin-left: -5px;
+	margin-right: -5px;
+
+	> [class*='col'] {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+
+.row-20 {
+	@include grid-offset(20px);
+}
+
+.row-30 {
+	@include grid-offset(30px);
+}
+
+.row-50 {
+	@include grid-offset(50px);
+}
+
+.row-60 {
+	@include grid-offset(50px);
+}
+
+.row-45 {
+	@include grid-offset(45px);
+}
+
+@include media-breakpoint-up(md) {
+	.row-md-50 {
+		@include grid-offset(50px);
+	} 
+}
+
+@include media-breakpoint-up(lg) {
+	.row-md-30 {
+		@include grid-offset(30px);
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+  .row-xxl-70 {
+		@include grid-offset(70px);
+	} 
+} 

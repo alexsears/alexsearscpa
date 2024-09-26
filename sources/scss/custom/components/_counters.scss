@@ -1,0 +1,76 @@
+/*
+*
+* Counters
+*/
+
+//
+// Table of Contents:
+//
+// Counter Minimal
+//
+
+//
+// Counter Minimal
+//
+.counter-minimal {
+	position: relative;
+	text-align: center;
+	color: $gray-700;
+}
+
+.counter-minimal-icon {
+	font-size: 24px;
+	line-height: 1;
+	color: $primary;
+}
+
+.counter-minimal-title { }
+
+.counter-minimal-main {
+	font-family: $font-family-sec;
+	font-size: 36px;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: 0;
+
+	> * {
+		display: inline;
+		font: inherit;
+	}
+	
+	span {
+		display: inline;
+	}
+}
+
+* + .counter-minimal-title { margin-top: 10px; }
+* + .counter-minimal-main { margin-top: 15px; }
+
+@include media-breakpoint-down(sm) {
+	.counter-minimal-title {
+		font-size: 16px;
+		line-height: 1.4;
+	}
+}
+
+@include media-breakpoint-up(md) {
+  .counter-minimal-icon {
+		font-size: 28px;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.counter-minimal-title {
+		font-size: 18px;
+	}
+
+	.counter-minimal-main {
+		font-size: 48px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	* + .counter-minimal-main { margin-top: 25px; }
+	* + .counter-minimal-title { margin-top: 18px; }
+}
+

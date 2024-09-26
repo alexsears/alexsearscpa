@@ -1,0 +1,130 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Sidebar Blog'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+	
+	section.section.section-lg
+		.container
+			article.blog-layout
+				.blog-layout-main
+					.row.row-50.row-xxl-70
+						.col-sm-6
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +jpg('sidebar-blog-1-370x264')
+								ul.post-classic-meta
+									li: a.button-winona(href='#') News
+									li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								h4.post-classic-title: a(href=links.post) 10 Digital Marketing Mistakes to Avoid
+		
+						.col-sm-6
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +jpg('sidebar-blog-2-370x264')
+								ul.post-classic-meta
+									li: a.button-winona(href='#') Advertising
+									li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								h4.post-classic-title: a(href=links.post) Where Marketers Need to Succeed This Season
+		
+						.col-sm-6
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +jpg('sidebar-blog-3-370x264')
+								ul.post-classic-meta
+									li: a.button-winona(href='#') News
+									li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								h4.post-classic-title: a(href=links.post) Managing Your Finances: Top 5 Tips
+								
+						.col-sm-6
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +jpg('sidebar-blog-4-370x264')
+								ul.post-classic-meta
+									li: a.button-winona(href='#') Advertising
+									li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								h4.post-classic-title: a(href=links.post) 5 Reasons Why You Need  an Accountant
+
+						.col-sm-6
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +jpg('sidebar-blog-5-370x264')
+								ul.post-classic-meta
+									li: a.button-winona(href='#') News
+									li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								h4.post-classic-title: a(href=links.post) What Public Relations Is All About? 
+
+
+						.col-sm-6
+							// Post Classic
+							article.post-classic
+								a.post-classic-media(href=links.post): +jpg('sidebar-blog-6-370x264')
+								ul.post-classic-meta
+									li: a.button-winona(href='#') Advertising
+									li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								h4.post-classic-title: a(href=links.post) What Does a Public Relations Person Do?
+								
+					.pagination
+						.page-item.active: a.page-link.button-winona(href='#') 1
+						.page-item: a.page-link.button-winona(href='#') 2
+						.page-item: a.page-link.button-winona(href='#') 3
+						.page-item: a.page-link.button-winona(href='#') 4
+
+
+				.blog-layout-aside
+					.blog-layout-aside-item
+						p.blog-layout-aside-title Search Blog
+						// RD Search
+						form.rd-form.rd-search.rd-search-classic(action='search-results.html' method='GET')
+							.form-wrap
+								input.form-input#rd-search-form-input(type='text' name='s' autocomplete='off')
+								label.form-label(for='rd-search-form-input') Search
+								
+							button.rd-search-submit(type='submit')
+							
+					.blog-layout-aside-item
+						p.blog-layout-aside-title Archive
+						ul.list-marked
+							li: a(href='#') May 2023
+							li: a(href='#') April 2023
+							li: a(href='#') March 2023
+							li: a(href='#') February 2023
+							li: a(href='#') January 2023
+							
+					.blog-layout-aside-item
+						p.blog-layout-aside-title About Us
+						p We are a team of dedicated business experts who are ready to assist you in financial management, accounting, marketing, and other business-related spheres.
+							
+					.blog-layout-aside-item
+						p.blog-layout-aside-title Categories
+						ul.list-marked
+							li: a(href='#') Advertising
+							li: a(href='#') Business
+							li: a(href='#') Public Relations
+							li: a(href='#') Call Center
+							li: a(href='#') Marketing
+							
+					.blog-layout-aside-item
+						p.blog-layout-aside-title Tags
+						ul.list-inline-comma
+							li: a(href='#') News 
+							li: a(href='#') Articles
+							li: a(href='#') Design
+							li: a(href='#') Management
+							li: a(href='#') Sales
+							li: a(href='#') Business
+				
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

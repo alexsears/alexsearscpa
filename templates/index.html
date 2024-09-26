@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Katy Accounting Firm</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Work+Sans:300,700,800%7COswald:300,400,500">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" id="main-styles-link">
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBK9XCQT60">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CBK9XCQT60');
+  </script>
+  <body>
+    <div class="page">
+      <!-- Page Header-->
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-fixed" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-aside-outer">
+                    <div class="rd-navbar-aside">
+                        <!-- RD Navbar Panel-->
+                        <div class="rd-navbar-panel">
+                            <!-- RD Navbar Toggle-->
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="{{ url_for('serve_index') }}">
+                            <img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" 
+                            alt="CPA Logo" width="171" height="39" 
+                            srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/>
+                        </a>
+                        </div>
+                        <div class="rd-navbar-collapse">
+                            <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
+                            <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
+                                <article class="unit align-items-center">
+                                    <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-phone"></span></div>
+                                    <div class="unit-body">
+                                        <ul class="list-0">
+                                            <li><a class="link-default" href="tel:8326770085">832-677-0085</a></li>
+                                            <li><a class="link-default" href="mailto:info@alexsearscpa.com">info@alexsearscpa.com</a></li>
+                                        </ul>
+                                    </div>
+                                </article>
+                                <article class="unit align-items-center">
+                                    <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-map-marker"></span></div>
+                                    <div class="unit-body"><a class="link-default" href="#"> Katy, TX 77494</a></div>
+                                </article><a class="button button-primary-outline button-winona" href="{{ url_for('serve_contacts') }}">Request a call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rd-navbar-main-outer">
+                    <div class="rd-navbar-main">
+                        <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                            <!-- RD Navbar Search-->
+                            <div class="rd-navbar-search" id="rd-navbar-search-1">
+                                <button class="rd-navbar-search-toggle" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
+                                <form class="rd-search" action="{{ url_for('serve_search_results') }}" data-search-live="rd-search-results-live-1" method="GET">
+                                    <div class="form-wrap">
+                                        <label class="form-label" for="rd-navbar-search-form-input-1">Search...</label>
+                                        <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
+                                        <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
+                                    </div>
+                                    <button class="rd-search-form-submit fa-search" type="submit"></button>
+                                </form>
+                            </div>
+                            <!-- RD Navbar Nav-->
+                            <ul class="rd-navbar-nav">
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_index') }}">Home</a></li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_about_us') }}">About Us</a></li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_services') }}">Our Services</a>
+                                    <!-- RD Navbar Dropdown-->
+                                    <ul class="rd-menu rd-navbar-dropdown">
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_accounting_services') }}">Accounting Services</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_tax_services') }}">Tax Services</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_consulting') }}">Consulting</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_audit_and_assurance') }}">Audit & Assurance</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_financial_planning') }}">Financial Planning</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_business_advisory') }}">Business Advisory</a></li>
+                                    </ul>
+                                </li>
+                                <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url_for('serve_contacts') }}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+      <section class="swiper-container swiper-slider swiper-slider-light" data-loop="true" data-speed="1200" data-effect="interleave">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-image-right" data-slide-bg="{{ url_for('static', filename='images/slider-light-slide-1-1920x776.jpg') }}">
+            <div class="slide-inner">
+              <div class="container">
+                <div class="swiper-slide-caption" style="padding-left: 0;">
+                  <h1 class="wow-outer" style="margin-left: -10%;">
+                    <span class="fw-light wow-outer"><span class="wow" data-caption-animate="slideInDown">Do You Need</span></span>
+                    <span class="fw-bold wow-outer"><span class="wow" data-caption-animate="slideInDown" data-wow-delay="0">an Accountant?</span></span>
+                  </h1>
+                  <div class="wow-outer button-outer" style="margin-left: -10%;"><a class="button button-lg button-primary button-winona wow" href="{{ url_for('serve_contacts') }}" data-caption-animate="slideInDown" data-wow-delay=".2s">Call now </a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>          <!-- Add more slider items as needed -->
+        </div>
+        <div class="swiper-pagination-outer container">
+          <div class="swiper-pagination swiper-pagination-modern swiper-pagination-marked" data-index-bullet="true"></div>
+        </div>
+      </section>
+      <!-- A Few Words About Us-->
+      <section class="section section-lg">
+        <div class="container">
+          <div class="row row-50 justify-content-center justify-content-lg-between flex-lg-row-reverse">
+            <div class="col-md-10 col-lg-6 col-xl-5">
+              <h3 class="wow-outer"><span class="wow slideInDown">A Few Words About Us</span></h3>
+              <p class="wow-outer"><span class="wow slideInDown" data-wow-delay=".05s">Katy Accounting Firm was founded in 2015 and since that time has grown into the largest CPA firm in the area. We are an assertive firm providing our clients a full range of services.</span></p>
+              <p class="wow-outer"><span class="wow slideInDown" data-wow-delay=".1s">Our offices are located in  West Houston because this is where we chose to live. However, we serve a wide variety of clients located throughout the United States and even some European countries.</span></p>
+              <div class="wow-outer button-outer"><a class="button button-lg button-primary button-winona wow slideInDown" data-wow-delay=".1s" href="{{ url_for('serve_about_us') }}">Learn more</a></div>
+            </div>
+            <div class="col-md-10 col-lg-6 wow-outer"><img class="img-responsive wow slideInLeft" src="{{ url_for('static', filename='images/large-features-3-570x368.jpg') }}" alt="" width="570" height="368"/>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contacts-->
+      <!-- Contacts-->
+      <section class="section bg-gray-100">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-xl-6 align-self-center">
+              <div class="row">
+                <div class="col-lg-9 cell-inner">
+                  <div class="section-lg">
+                    <h3 class="wow-outer"><span class="wow slideInDown">Contact Us</span></h3>
+                    <!-- RD Mailform-->
+                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ url_for('send_email') }}">
+                      <div class="row row-10">
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-first-name">First Name</label>
+                            <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
+                          </div>
+                        </div>
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-last-name">Last Name</label>
+                            <input class="form-input" id="contact-last-name" type="text" name="name" data-constraints="@Required">
+                          </div>
+                        </div>
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-email">E-mail</label>
+                            <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
+                          </div>
+                        </div>
+                        <div class="col-md-6 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-phone">Phone</label>
+                            <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Phone">
+                          </div>
+                        </div>
+                        <div class="col-12 wow-outer">
+                          <div class="form-wrap wow fadeSlideInUp">
+                            <label class="form-label-outside" for="contact-message">Your Message</label>
+                            <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="group group-middle">
+                        <div class="wow-outer">
+                          <button class="button button-primary button-winona wow slideInRight" type="submit">Send Message</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cell-xl-5 height-fill wow fadeIn">
+              <div class="map-container" style="width: 100%; height: 100%; min-height: 400px;">
+                  <iframe
+                      width="100%"
+                      height="100%"
+                      frameborder="0"
+                      style="border:0"
+                      src="https://www.google.com/maps/embed/v1/place?q=Katy,+TX&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&zoom=9&center=29.8174,-95.6017"
+                      allowfullscreen
+                  ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+      <footer class="section footer-advanced bg-gray-700">
+        <div class="footer-advanced-main">
+          <div class="container">
+            <div class="row row-50">
+              <div class="col-lg-4">
+                <h4>About Us</h4>
+                <p class="footer-advanced-text">Our firm is one of the leading accounting firms in the area. By combining our expertise, experience and the energy of our staff, each client receives close personal and professional attention.</p>
+              </div>
+              <div class="col-sm-7 col-md-5 col-lg-4">
+                <h4>Recent Blog Posts</h4>
+                <!-- Add recent blog posts here -->
+              </div>
+              <div class="col-sm-5 col-md-7 col-lg-4">
+                <h4>Quick Links</h4>
+                <ul class="nav-list">
+                  <li><a href="{{ url_for('serve_index') }}">Home</a></li>
+                  <li><a href="{{ url_for('serve_about_us') }}">About Us</a></li>
+                  <li><a href="{{ url_for('serve_services') }}">Services</a></li>
+                  <li><a href="{{ url_for('serve_blog') }}">Blog</a></li>
+                  <li><a href="{{ url_for('serve_contacts') }}">Contacts</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-advanced-aside">
+          <div class="container">
+            <div class="footer-advanced-layout">
+              <div>
+                <ul class="list-nav">
+                  <li><a href="{{ url_for('serve_index') }}">Home</a></li>
+                  <li><a href="{{ url_for('serve_about_us') }}">About</a></li>
+                  <li><a href="{{ url_for('serve_services') }}">Services</a></li>
+                  <li><a href="{{ url_for('serve_grid_gallery') }}">Gallery</a></li>
+                  <li><a href="{{ url_for('serve_blog') }}">Blog</a></li>
+                  <li><a href="{{ url_for('serve_contacts') }}">Contacts</a></li>
+                </ul>
+              </div>
+              <div>
+                <ul class="list-inline list-inline-md">
+                  <li><a class="icon icon-sm link-default mdi mdi-facebook" href="#"></a></li>
+                  <li><a class="icon icon-sm link-default mdi mdi-twitter" href="#"></a></li>
+                  <li><a class="icon icon-sm link-default mdi mdi-instagram" href="#"></a></li>
+                  <li><a class="icon icon-sm link-default mdi mdi-google" href="#"></a></li>
+                  <li><a class="icon icon-sm link-default mdi mdi-linkedin" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <hr>
+        </div>
+        <div class="footer-advanced-aside">
+          <div class="container">
+            <div class="footer-advanced-layout">
+              <a class="brand" href="{{ url_for('serve_index') }}">
+                <img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" 
+                     alt="SA CPA Logo" width="171" height="39" 
+                     srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/>
+              </a>
+              <!-- Rights-->
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none"/><a href="#">Terms of Use</a><span> and</span><span>&nbsp;</span><a href="{{ url_for('serve_privacy_policy') }}">Privacy Policy</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+<!-- Place this just before the closing </body> tag -->
+<div class="preloader">
+  <div class="preloader-logo">
+      <img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/>
+  </div>
+  <div class="preloader-body">
+      <div id="loadingProgressG">
+          <div class="loadingProgressG" id="loadingProgressG_1"></div>
+      </div>
+  </div>
+</div>
+
+    
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+    
+    
+    <script>
+      // Add this script to ensure the preloader is hidden after page load
+      window.addEventListener('load', function() {
+          document.querySelector('.preloader').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>

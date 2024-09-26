@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>{{ title }} - Katy Accounting Firm</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Work+Sans:300,700,800%7COswald:300,400,500">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" id="main-styles-link">
+  </head>
+  <body>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-fixed" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-aside-outer">
+                    <div class="rd-navbar-aside">
+                        <!-- RD Navbar Panel-->
+                        <div class="rd-navbar-panel">
+                            <!-- RD Navbar Toggle-->
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                            <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="{{ url_for('serve_index') }}"><img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/></a>
+                        </div>
+                        <div class="rd-navbar-collapse">
+                            <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle="#rd-navbar-collapse-content-1"><span></span></button>
+                            <div class="rd-navbar-collapse-content" id="rd-navbar-collapse-content-1">
+                                <article class="unit align-items-center">
+                                    <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-phone"></span></div>
+                                    <div class="unit-body">
+                                        <ul class="list-0">
+                                            <li><a class="link-default" href="tel:8326770085">832-677-0085</a></li>
+                                            <li><a class="link-default" href="mailto:info@alexsearscpa.com">info@alexsearscpa.com</a></li>
+                                        </ul>
+                                    </div>
+                                </article>
+                                <article class="unit align-items-center">
+                                    <div class="unit-left"><span class="icon icon-md icon-modern mdi mdi-map-marker"></span></div>
+                                    <div class="unit-body"><a class="link-default" href="#"> Katy, TX 77494</a></div>
+                                </article><a class="button button-primary-outline button-winona" href="{{ url_for('serve_contacts') }}">Request a call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rd-navbar-main-outer">
+                    <div class="rd-navbar-main">
+                        <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                            <!-- RD Navbar Search-->
+                            <div class="rd-navbar-search" id="rd-navbar-search-1">
+                                <button class="rd-navbar-search-toggle" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
+                                <form class="rd-search" action="{{ url_for('serve_search_results') }}" data-search-live="rd-search-results-live-1" method="GET">
+                                    <div class="form-wrap">
+                                        <label class="form-label" for="rd-navbar-search-form-input-1">Search...</label>
+                                        <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
+                                        <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
+                                    </div>
+                                    <button class="rd-search-form-submit fa-search" type="submit"></button>
+                                </form>
+                            </div>
+                            <!-- RD Navbar Nav-->
+                            <ul class="rd-navbar-nav">
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_index') }}">Home</a></li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_about_us') }}">About Us</a></li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_services') }}">Our Services</a>
+                                    <!-- RD Navbar Dropdown-->
+                                    <ul class="rd-menu rd-navbar-dropdown">
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_accounting_services') }}">Accounting Services</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_tax_services') }}">Tax Services</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_consulting') }}">Consulting</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_audit_and_assurance') }}">Audit & Assurance</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_financial_planning') }}">Financial Planning</a></li>
+                                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url_for('serve_business_advisory') }}">Business Advisory</a></li>
+                                    </ul>
+                                </li>
+                                <li class="rd-nav-item active"><a class="rd-nav-link" href="{{ url_for('serve_contacts') }}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+      <!-- Breadcrumbs -->
+      <section class="breadcrumbs-custom bg-image context-dark" style="background-image: url({{ url_for('static', filename='images/breadcrumbs-image-1.jpg') }});">
+        <div class="breadcrumbs-custom-inner">
+          <div class="container breadcrumbs-custom-container">
+            <div class="breadcrumbs-custom-main">
+              <h6 class="breadcrumbs-custom-subtitle title-decorated">Services</h6>
+              <h1 class="breadcrumbs-custom-title">Services</h1>
+            </div>
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="{{ url_for('serve_index') }}">Home</a></li>
+              <li class="active">Services</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- A Few Words About Us-->
+      <section class="section section-lg bg-gray-100">
+        <div class="container">
+          <div class="row row-50 justify-content-center justify-content-lg-between">
+            <div class="col-md-10 col-lg-6 col-xl-5">
+              <h3>A Few Words About Us</h3>
+              <p>We are a team of talented Accountants who happen to love creating value for those who will have us. We use our financial acumen to provide the optimal solutions.</p>
+              <p>We have a wide range of experience, expertise and tools to create and implement your solutions, from payroll to bookkeeping to personal and business taxes, give us a call!</p>
+              <a class="button button-lg button-primary button-winona" href="{{ url_for('serve_about_us') }}">Learn more</a>
+            </div>
+            <div class="col-md-10 col-lg-6"><img class="img-responsive" src="{{ url_for('static', filename='images/services-1-570x368.jpg') }}" alt="" width="570" height="368"/>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services-->
+      <section class="section-lg text-center">
+        <div class="container">
+          <h3>Services</h3>
+          <p><span class="text-width-1">As the most qualified accounting services provider, we offer an amazing variety of financial solutions designed to help you solve all bookkeeping issues, no matter big or small.</span></p>
+          <div class="row row-50 row-xxl-70 offset-top-2">
+            <div class="col-sm-6 col-lg-3">
+              <!-- Thumbnail Light-->
+              <article class="thumbnail-light"><a class="thumbnail-light-media" href="{{ url_for('serve_accounting_services') }}"><img class="thumbnail-light-image" src="{{ url_for('static', filename='images/service-thumbnail-1-270x300.jpg') }}" alt="" width="270" height="300"/></a>
+                <h5 class="thumbnail-light-title"><a href="{{ url_for('serve_accounting_services') }}">Accounting Services</a></h5>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <!-- Thumbnail Light-->
+              <article class="thumbnail-light"><a class="thumbnail-light-media" href="{{ url_for('serve_tax_services') }}"><img class="thumbnail-light-image" src="{{ url_for('static', filename='images/service-thumbnail-2-270x300.jpg') }}" alt="" width="270" height="300"/></a>
+                <h5 class="thumbnail-light-title"><a href="{{ url_for('serve_tax_services') }}">Tax Services</a></h5>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <!-- Thumbnail Light-->
+              <article class="thumbnail-light"><a class="thumbnail-light-media" href="{{ url_for('serve_consulting') }}"><img class="thumbnail-light-image" src="{{ url_for('static', filename='images/service-thumbnail-3-270x300.jpg') }}" alt="" width="270" height="300"/></a>
+                <h5 class="thumbnail-light-title"><a href="{{ url_for('serve_consulting') }}">Consulting</a></h5>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <!-- Thumbnail Light-->
+              <article class="thumbnail-light"><a class="thumbnail-light-media" href="{{ url_for('serve_audit_and_assurance') }}"><img class="thumbnail-light-image" src="{{ url_for('static', filename='images/service-thumbnail-4-270x300.jpg') }}" alt="" width="270" height="300"/></a>
+                <h5 class="thumbnail-light-title"><a href="{{ url_for('serve_audit_and_assurance') }}">Audit and Assurance</a></h5>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <!-- Thumbnail Light-->
+              <article class="thumbnail-light"><a class="thumbnail-light-media" href="{{ url_for('serve_financial_planning') }}"><img class="thumbnail-light-image" src="{{ url_for('static', filename='images/service-thumbnail-5-270x300.jpg') }}" alt="" width="270" height="300"/></a>
+                <h5 class="thumbnail-light-title"><a href="{{ url_for('serve_financial_planning') }}">Financial Planning</a></h5>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <!-- Thumbnail Light-->
+              <article class="thumbnail-light"><a class="thumbnail-light-media" href="{{ url_for('serve_business_advisory') }}"><img class="thumbnail-light-image" src="{{ url_for('static', filename='images/service-thumbnail-6-270x300.jpg') }}" alt="" width="270" height="300"/></a>
+                <h5 class="thumbnail-light-title"><a href="{{ url_for('serve_business_advisory') }}">Business Advisory</a></h5>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-xl bg-gray-700 bg-image bg-image-1" style="background-image: url({{ url_for('static', filename='images/call-to-action-2-1920x584.jpg') }});">
+        <div class="container">
+          <div class="row justify-content-sm-end">
+            <div class="col-sm-9 col-md-7 col-lg-6">
+              <div class="box-2">
+                <div class="wow-outer">
+                  <div class="wow slideInUp">
+                    <h4>Take the First Step to the</h4>
+                    <h3 class="fw-bold">Success of Your Company</h3>
+                  </div>
+                </div>
+                <div class="wow-outer offset-top-4">
+                  <div class="wow slideInDown">
+                    <p>We can make your company the leader of the market by providing high quality business management solutions. Schedule an appointment to find out more.</p><a class="button button-primary button-winona" href="{{ url_for('serve_contacts') }}">Make an Appointment</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials-->
+      <section class="section section-lg">
+        <div class="container">
+          <h3 class="text-center">Testimonials</h3>
+          <div class="owl-carousel" data-items="1" data-md-items="2" data-dots="true" data-nav="false" data-loop="true" data-autoplay="true" data-margin="30" data-stage-padding="0" data-mouse-drag="false">
+            <div class="wow-outer">
+              <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                  <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                </svg>
+                <div class="quote-modern-text">
+                  <p>I was impressed by the quality of what your specialists did. They quickly found out what was the main problem of my company and helped me to form a correct strategy.</p>
+                </div>
+                <div class="quote-modern-meta">
+                  <div class="quote-modern-avatar"><img src="{{ url_for('static', filename='images/testimonials-person-3-96x96.jpg') }}" alt="" width="96" height="96"/>
+                  </div>
+                  <div class="quote-modern-info">
+                    <cite class="quote-modern-cite">Albert Webb</cite>
+                    <p class="quote-modern-caption">CEO at Majestic</p>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <div class="wow-outer">
+              <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                  <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                </svg>
+                <div class="quote-modern-text">
+                  <p>I appreciate what you've done to help my small company develop and thrive in that market niche that we specialize in. Your business consulting experts are the best!</p>
+                </div>
+                <div class="quote-modern-meta">
+                  <div class="quote-modern-avatar"><img src="{{ url_for('static', filename='images/testimonials-person-1-96x96.jpg') }}" alt="" width="96" height="96"/>
+                  </div>
+                  <div class="quote-modern-info">
+                    <cite class="quote-modern-cite">Kelly McMillan</cite>
+                    <p class="quote-modern-caption">Private Entrepreneur</p>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <div class="wow-outer">
+              <blockquote class="quote-modern quote-modern-big wow slideInLeft">
+                <svg class="quote-modern-mark" x="0px" y="0px" width="35px" height="25px" viewbox="0 0 35 25">
+                  <path d="M27.461,10.206h7.5v15h-15v-15L25,0.127h7.5L27.461,10.206z M7.539,10.206h7.5v15h-15v-15L4.961,0.127h7.5                L7.539,10.206z"></path>
+                </svg>
+                <div class="quote-modern-text">
+                  <p>My cooperation with your team helped me understand that you really care about your clients – it was proved by a lot of positive reviews already – and that's why I chose you.</p>
+                </div>
+                <div class="quote-modern-meta">
+                  <div class="quote-modern-avatar"><img src="{{ url_for('static', filename='images/testimonials-person-2-96x96.jpg') }}" alt="" width="96" height="96"/>
+                  </div>
+                  <div class="quote-modern-info">
+                    <cite class="quote-modern-cite">Harold Barnett</cite>
+                    <p class="quote-modern-caption">Regional Manager</p>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+      <footer class="section footer-standard bg-gray-700">
+        <div class="footer-standard-main">
+          <div class="container">
+            <div class="row row-50">
+              <div class="col-lg-4">
+                <div class="inset-right-1">
+                  <h4>About Us</h4>
+                  <p>Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.</p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-5 col-lg-4">
+                <div class="box-1">
+                  <h4>Contact Information</h4>
+                  <ul class="list-sm">
+                    <li class="object-inline"><span class="icon icon-md mdi mdi-map-marker text-gray-700"></span><a class="link-default" href="#"><br> Katy, TX 77494 USA</a></li>
+                    <li class="object-inline"><span class="icon icon-md mdi mdi-phone text-gray-700"></span><a class="link-default" href="tel:8326770085">832-677-0085</a></li>
+                    <li class="object-inline"><span class="icon icon-md mdi mdi-email text-gray-700"></span><a class="link-default" href="mailto:info@alexsearscpa.com">info@alexsearscpa.com</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-7 col-lg-4">
+                <h4>Newsletter</h4>
+                <p>Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.</p>
+                <!-- RD Mailform-->
+                <form class="rd-form rd-mailform form-inline" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="{{ url_for('send_email') }}">
+                  <div class="form-wrap">
+                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required">
+                    <label class="form-label" for="subscribe-form-2-email">E-mail</label>
+                  </div>
+                  <div class="form-button">
+                    <button class="button button-primary button-icon button-icon-only button-winona" type="submit" aria-label="submit"><span class="icon mdi mdi-email-outline"></span></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="footer-standard-aside"><a class="brand" href="{{ url_for('serve_index') }}"><img src="{{ url_for('static', filename='images/logo-light-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-light-342x78.png') }}"/></a>
+            <!-- Rights-->
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><br class="d-sm-none"/><a href="#">Terms of Use</a><span> and</span><span>&nbsp;</span><a href="{{ url_for('serve_privacy_policy') }}">Privacy Policy</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="preloader"> 
+      <div class="preloader-logo"><img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/>
+      </div>
+      <div class="preloader-body">
+        <div id="loadingProgressG">
+          <div class="loadingProgressG" id="loadingProgressG_1"></div>
+        </div>
+      </div>
+    </div>    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+      window.addEventListener('load', function() {
+          document.querySelector('.preloader').style.display = 'none';
+      });
+  </script>
+  </body>
+</html> 

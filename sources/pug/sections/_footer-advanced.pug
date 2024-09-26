@@ -1,0 +1,94 @@
+mixin footer-advanced(obj)
+	footer.section.footer-advanced.bg-gray-700
+		.footer-advanced-main
+			.container
+				.row.row-50
+					.col-lg-4
+						h4 About Us
+						p.footer-advanced-text=obj.about
+	
+					.col-sm-7.col-md-5.col-lg-4
+						h4 Recent Blog Posts
+						// Post Inline
+						article.post-inline
+							p.post-inline-title: a(href=links.post)=obj.posts[0]
+							ul.post-inline-meta
+								li by Theresa Barnes
+								li: a(href=links.post) 2 days ago
+	
+						// Post Inline
+						article.post-inline
+							p.post-inline-title: a(href=links.post)=obj.posts[1]
+							ul.post-inline-meta  
+								li by Theresa Barnes
+								li: a(href=links.post) 2 days ago
+	
+					.col-sm-5.col-md-7.col-lg-4
+						h4 Gallery
+						.row.row-x-10(data-lightgallery='group')
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-6.jpg' data-lightgallery='item')
+									+jpg("galley-footer-1-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-5.jpg' data-lightgallery='item')
+									+jpg("galley-footer-2-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-10.jpg' data-lightgallery='item')
+									+jpg("galley-footer-3-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-7.jpg' data-lightgallery='item')
+									+jpg("galley-footer-4-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-4.jpg' data-lightgallery='item')
+									+jpg("galley-footer-5-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-2.jpg' data-lightgallery='item')
+									+jpg("galley-footer-6-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-1.jpg' data-lightgallery='item')
+									+jpg("galley-footer-7-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+
+							.col-3.col-sm-4.col-md-3
+								a.thumbnail-minimal(href='static/images/gallery-original-3.jpg' data-lightgallery='item')
+									+jpg("galley-footer-8-150x150", "thumbnail-minimal-image")
+									.thumbnail-minimal-caption
+	
+		.footer-advanced-aside
+			.container
+				.footer-advanced-layout
+					div: ul.list-nav 
+						li: a(href='index.html') Home
+						li: a(href='about-us.html') About
+						li: a(href='services.html') Services
+						li: a(href='grid-gallery.html') Gallery
+						li: a(href='grid-blog.html') Blog
+						li: a(href='contacts.html') Contacts
+	
+					div: ul.list-inline.list-inline-md
+						li: a.icon.icon-sm.link-default.mdi.mdi-facebook(href='#')
+						li: a.icon.icon-sm.link-default.mdi.mdi-twitter(href='#')
+						li: a.icon.icon-sm.link-default.mdi.mdi-instagram(href='#')
+						li: a.icon.icon-sm.link-default.mdi.mdi-google(href='#')
+						li: a.icon.icon-sm.link-default.mdi.mdi-linkedin(href='#')
+	
+		.container: hr
+	
+		.footer-advanced-aside
+			.container
+				.footer-advanced-layout
+					a.brand(href='index.html')
+						+png(logo.light.trueSize)(srcset='static/images/' + logo.light.retina + '.png')
+					+rights

@@ -1,0 +1,52 @@
+extends  ../_skeleton
+
+//- Includes
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Footers'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Standard footer
+	.section-sm.section-first
+		.container
+			h6 Standard footer
+		include ../sections/_footer-standard
+		+footer-standard({
+			about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+		})
+
+	// Advanced footer
+	.section-sm
+		.container
+			h6 Advanced footer
+		include ../sections/_footer-advanced
+		+footer-advanced({
+			about: 'Our firm is one of the leading business management companies in the area. By combining our expertise, experience and the energy of our staff, each client receives close personal and professional attention. Our high standards, service and specialized staff spell the difference between our outstanding performance, and other firms.',
+			posts: [
+				'Top Tips from Accountants: How To Handle IRS Scams',
+				'Blogging for Financial Advisors: Build a Trusted Relationship Through Your Blog'
+			]
+		})
+
+	// Minimal footer
+	.section-sm
+		.container
+			h6 Minimal footer
+		include ../sections/_footer-minimal
+
+	// Linked footer
+	.section-sm.section-last
+		.container
+			h6 Linked footer
+		include ../sections/_footer-linked
+
+
+	// Page Footer
+	include ../sections/_footer-minimal

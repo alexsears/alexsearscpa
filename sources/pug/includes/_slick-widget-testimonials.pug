@@ -1,0 +1,89 @@
+.slick-widget-testimonials.wow.fadeIn
+	.slick-slider.carousel-child#child-carousel(
+	data-for='.carousel-parent'
+	data-arrows='true'
+	data-loop='true'
+	data-autoplay='true'
+	data-dots='false'
+	data-swipe='true'
+	data-items='1'
+	data-sm-items='3'
+	data-md-items='5'
+	data-lg-items='5'
+	data-xl-items='5'
+	data-center-mode='true'
+	data-slide-to-scroll='1')
+		.item.wow-outer: +jpg('testimonials-person-1-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-2-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-3-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-4-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-5-96x96').wow.slideInLeft
+		.item.wow-outer: +jpg('testimonials-person-3-96x96').wow.slideInLeft
+
+
+	// Slick Carousel
+	.slick-slider.carousel-parent(
+	data-arrows='false'
+	data-loop='true'
+	data-dots='false'
+	data-swipe='false'
+	data-items='1'
+	data-fade='true'
+	data-child='#child-carousel'
+	data-for='#child-carousel')
+		.item
+			// Quote Light 1
+			blockquote.quote-light
+				cite.quote-light-cite Kelly McMillan
+				p.quote-light-caption CEO at The Olbrand
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Thank you for the SMM and online marketing services you delivered. You helped my website to attract new partners and promote my own services to a greater number of customers.
+				.quote-light-footer: +png('logo-the-oldbrand-83x64', 'quote-light-image')
+
+		.item
+			// Quote Light 2
+			blockquote.quote-light
+				cite.quote-light-cite Harold Barnett
+				p.quote-light-caption CFO at Havana Cabana
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Katy Accounting Firm is the only agency that provides high quality online marketing and promotion services. The members of their team are real professionals in what they do.
+				.quote-light-footer: +png('logo-havana-kabana-96x64', 'quote-light-image')
+
+		.item
+			// Quote Light 3
+			blockquote.quote-light
+				cite.quote-light-cite Albert Webb
+				p.quote-light-caption Manager at Majestic
+				+quote-mark.quote-light-mark
+				.quote-light-text: p I would just like to say thank you for your effective online marketing services, for your friendly and professional support and answers to my questions connected with my advertising campaign!
+				.quote-light-footer: +png('logo-majestic-104x64', 'quote-light-image')
+
+		.item
+			// Quote Light 4 
+			blockquote.quote-light
+				cite.quote-light-cite Samantha Lee
+				p.quote-light-caption Sales Manager at Hillplan
+				+quote-mark.quote-light-mark
+				.quote-light-text: p If you want advertising and marketing that’s done right, and a truly dedicated team of professionals, you need to work with Katy Accounting Firm. They know the market and care about their clients.
+				.quote-light-footer: +png('logo-hillplan-84x64', 'quote-light-image')
+
+		.item
+			// Quote Light 5
+			blockquote.quote-light
+				cite.quote-light-cite Bill Warner
+				p.quote-light-caption Sr. Manager at Brownie
+				+quote-mark.quote-light-mark
+				.quote-light-text: p Katy Accounting Firm created a well-planned, well-placed, and well-executed media campaign for us. They are real professionals when it comes to affordable and high-quality online marketing services.
+				.quote-light-footer: +png('logo-brownie-103x61', 'quote-light-image')
+
+		.item
+			// Quote Light 3
+			blockquote.quote-light
+				cite.quote-light-cite Albert Webb
+				p.quote-light-caption Manager at Majestic
+				+quote-mark.quote-light-mark
+				.quote-light-text: p I would just like to say thank you for your effective online marketing services, for your friendly and professional support and answers to my questions connected with my advertising campaign!
+				.quote-light-footer: +png('logo-majestic-104x64', 'quote-light-image')
+
+
+							

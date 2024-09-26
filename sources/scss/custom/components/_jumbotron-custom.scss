@@ -1,0 +1,161 @@
+/*
+*
+* Jumbotron Classic
+*/
+
+//
+// Table of Contents
+//
+// Jumbotron Classic
+// Jumbotron Modern
+// Jumbotron Indigo
+//
+
+
+//
+// Jumbotron Classic
+// 
+.jumbotron-classic {
+	&.bg-gray-700 { 
+		h6,
+		.heading-6 {
+			color: $white;
+		}
+	}
+
+	&.parallax-container {
+		background-position: 60% center;
+	}
+
+	.parallax-content {
+		width: 100%;
+	}
+}
+
+.jumbotron-classic-content {
+	max-width: 600px; 
+	padding: 50px 0;
+}
+
+@include media-breakpoint-down(xl) {
+	.jumbotron-classic.parallax-container {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			pointer-events: none;
+			background: linear-gradient(to right, rgba($gray-700, .6), rgba($gray-700, .2));
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.jumbotron-classic-inner {
+		padding: 120px 0 140px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.jumbotron-classic-inner {
+		display: flex;
+		align-items: center; 
+		min-height: (872 / 1920) * 100vw;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.jumbotron-classic-content {
+		padding: 200px 0 150px;
+	}
+} 
+
+
+//
+// Jumbotron Modern
+//
+.jumbotron-modern {
+	position: relative;
+	display: flex;
+	text-align: center;
+}
+
+.jumbotron-modern-inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 50px 0;
+}
+
+.jumbotron-modern-content {
+	max-width: 770px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@include media-breakpoint-down(md) {
+	.jumbotron-modern {
+		.form-layout-1 {
+			display: inline-block;
+			max-width: 360px;
+		}
+	}
+}
+
+@include media-breakpoint-down(xl) {
+	.jumbotron-modern {
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			pointer-events: none;
+			background: linear-gradient(to bottom, rgba($gray-700, .4), rgba($gray-700, 0));
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.jumbotron-modern-inner {
+		padding: 100px 0 140px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+  .jumbotron-modern-inner {
+		min-height: (800 / 1920) * 100vw;
+	} 
+} 
+
+
+//
+// Jumbotron Indigo
+//
+.jumbotron-indigo {
+	
+}
+
+.jumbotron-indigo-header {
+	padding: 40px 0;
+}
+
+.jumbotron-indigo-main {
+	padding: 10px 0 40px; 
+}
+
+ 
+@include media-breakpoint-up(md) {
+	.jumbotron-indigo-header {
+		padding: 50px 0;	
+	}
+	
+	.jumbotron-indigo-main {
+		padding: 50px 0 185px;
+	}
+}

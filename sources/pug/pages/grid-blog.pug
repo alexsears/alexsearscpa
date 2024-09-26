@@ -1,0 +1,77 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'blog'
+	- var pageName = 'Grid Blog'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+	
+	section.section.section-lg
+		.container
+			.row.row-50.row-xxl-70
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn
+						article.post-modern
+							a.post-modern-media(href=links.post): +jpg('grid-blog-1-571x353')
+							h4.post-modern-title: a(href=links.post) Managing Your Finances
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								li: a.button-winona(href='#') News
+							p Personal financial management is a subject that is not taught in many schools, but is something that nearly everyone has to deal with in their lives later on. Here are some statistics...
+
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn(data-wow-delay='.1s')
+						article.post-modern 
+							a.post-modern-media(href=links.post): +jpg('grid-blog-2-571x353')
+							h4.post-modern-title: a(href=links.post) 5 Reasons Why You Need an Accountant
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								li: a.button-winona(href='#') Advertising
+							p As your business — and revenue — grow, managing your financials may become a task you don’t have the time or knowledge to manage. Specifically, when it comes avoiding legal and...
+						
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn
+						article.post-modern
+							a.post-modern-media(href=links.post): +jpg('grid-blog-3-571x353')
+							h4.post-modern-title: a(href=links.post) 10 Digital Marketing Mistakes to Avoid
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								li: a.button-winona(href='#') News
+							p Though managing your digital marketing campaign may seem easy, you can encounter some complexities, which usually lead to mistakes and a bad promotion effect. To avoid it...
+
+				.col-md-6.scaleFadeInWrap
+					// Post Modern
+					.wow.scaleFadeIn(data-wow-delay='.1s')
+						article.post-modern
+							a.post-modern-media(href=links.post): +jpg('grid-blog-4-571x353')
+							h4.post-modern-title: a(href=links.post) Where Marketers Need to Succeed This Season
+							ul.post-modern-meta
+								li by Theresa Barnes
+								li: time(datetime='2023') Apr 21, 2023 at 12:05 pm
+								li: a.button-winona(href='#') Advertising
+							p Being a successful marketer today might appear to require a never-ending list of skills. Where do you need to excel - content creation, social media, web analytics, or all of the above? Let’s...
+						
+			.pagination
+				.page-item.active: a.page-link.button-winona(href='#') 1
+				.page-item: a.page-link.button-winona(href='#') 2
+				.page-item: a.page-link.button-winona(href='#') 3
+				.page-item: a.page-link.button-winona(href='#') 4
+				
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

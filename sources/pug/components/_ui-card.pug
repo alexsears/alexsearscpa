@@ -1,0 +1,16 @@
+mixin card(obj)
+	- var headingId = id=obj.parentId + '-heading-' + obj.number
+	- var bodyId = id=obj.parentId + '-collapse-' + obj.number
+
+	// Bootstrap card
+	article.card.card-custom(class=obj.cardClass)&attributes(attributes)
+		.card-header(id=headingId role='tab')
+			.card-title
+				a(role='button' data-bs-toggle='collapse' data-bs-parent=('#' + obj.parentId) href='#' + bodyId aria-controls=bodyId aria-expanded=obj.show ? 'true' : 'false' class={'collapsed' : !obj.show})
+					=obj.header
+					if(obj.arrow !== false)
+						.card-arrow
+
+		.collapse(id=bodyId class={'show': obj.show} role='tabpanel' data-bs-parent=('#' + obj.parentId) aria-labelledby=headingId)
+			.card-body
+				block

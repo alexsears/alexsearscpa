@@ -1,0 +1,128 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = https://fonts.googleapis.com/css?family=Work+Sans:300,700,800%7COswald:300,400,500",
+		navbarCounter = 0,
+		logo = {
+			name: 'Katy Accounting Firm',
+			default: { trueSize: 'logo-default-171x39', retina: 'logo-default-342x78' },
+			inverse: { trueSize: 'logo-inverse-171x39', retina: 'logo-inverse-342x78' },
+			light: { trueSize: 'logo-light-171x39', retina: 'logo-light-342x78' }
+		},
+		links = {
+			post: 'single-blog-post.html',
+			getTemplate: '#get-template'
+		},
+		colors = {
+			primary: '#0095D9' 
+		},
+		menu = [
+			{
+				title: 'Home',
+				category: 'home',
+				link: 'index.html'
+			},
+			{
+				title: 'Features', 
+				category: 'features',
+				link: '#',
+				megamenu: [
+					{
+						list: [
+							{ title: 'Typography' },
+							{ title: 'Buttons' },
+							{ title: 'Forms' },
+							{ title: 'Progress bars' },
+							{ title: 'Tabs' },
+							{ title: 'Tables' },
+							{ title: 'Accordions' }
+						]
+					},
+					{
+						list: [
+							{ title: 'Blog Layouts' },
+							{ title: 'Calls to Action' },
+							{ title: 'Footers' },
+							{ title: 'Maps & Contacts', link: 'maps-and-contacts.html' },
+							{ title: 'Navigation Bars' },
+							{ title: 'Screens' },
+							{ title: 'Portfolio & Galleries', link: 'portfolio-and-galleries.html' }
+						]
+					},
+					{
+						list: [
+							{ title: 'Small Features' },
+							{ title: 'Team' },
+							{ title: 'Testimonials' },
+							{ title: 'Large Features' },
+							{ title: 'Pricing' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Services', 
+				category: 'services'
+			},
+			{
+				title: 'Blog',
+				category: 'blog',
+				link: '#',
+				dropdown: [
+					{ title: 'Grid Blog' },
+					{ title: 'Sidebar Blog' },
+					{ title: 'Single Blog Post', link: links.post }
+				] 
+			},
+			{
+				title: 'Portfolio',
+				link: '#', 
+				category: 'portfolio',
+				dropdown: [
+					{ title: 'Grid Layout' },
+					{ title: 'Masonry Layout' },
+					{ title: 'Modern Layout' },
+					{ title: 'Single Project' }
+				]
+			},
+			{
+				title: 'Pages', 
+				category: 'pages',
+				link: '#',
+				megamenu: [ 
+					{
+						banner: {
+							image: 'megamenu-banner-1-570x368',
+							button: "<a class='button button-sm button-primary button-winona' href='" + links.getTemplate + "'>Buy Theme</a>"
+						}
+					},
+					{
+						list: [
+							{ title: '404 Page' },
+							{ title: '503 Page' },
+							{ title: 'Coming Soon' },
+							{ title: 'Under Construction' },
+							{ title: 'About Us' },
+							{ title: 'About Me' },
+							{ title: 'Grid Gallery' },
+							{ title: 'Masonry Gallery' }
+						]
+					},
+					{
+						list: [
+						{ title: 'Careers' },
+						{ title: 'Search results' },
+						{ title: 'Services' },
+						{ title: 'Single Service' },
+						{ title: 'Single Job' },
+						{ title: 'Privacy policy' },
+						{ title: 'Modern Gallery' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Contacts',
+				category: 'contacts'
+			}
+		];

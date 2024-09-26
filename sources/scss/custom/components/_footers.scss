@@ -1,0 +1,295 @@
+/*
+*
+* Footers
+*/
+
+//
+// Table of Contents:
+//
+// Footers Standard
+// Footer Minimal
+// Footer Advanced
+//
+
+//
+// Footer Standard
+//
+.footer-standard {
+	h4 + *,
+	.heading-4 + * {
+		margin-top: 14px;
+	}
+}
+
+.footer-standard-main {
+	padding: 35px 0 15px;
+}
+
+.footer-standard-aside {
+	padding: 30px 0;
+}
+
+.footer-standard-aside {
+	@include groupY(18px);
+	text-align: center;
+
+	> * { margin-top: 0; }
+}
+
+@include media-breakpoint-down(sm) {
+	.footer-standard {
+		.box-1 {
+			margin-left: 0;
+		}
+	}
+}
+
+@include media-breakpoint-between(md, lg) {
+	.footer-standard {
+		.box-1 {
+			margin-left: 0;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.footer-standard {
+		h4 + *,
+		.heading-4 + * {
+			margin-top: 25px;
+		}
+	}
+
+	.footer-standard-main {
+		padding: 55px 0 20px;
+	}
+
+	.footer-standard-aside {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		text-align: center;
+		@include groupX(20px);
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.footer-standard-main {
+		padding: 80px 0 50px;
+	}
+}
+
+//
+// Footer Minimal
+//
+.footer-minimal {
+	padding: 30px 0;
+}
+
+.footer-minimal-inner { 
+	@include groupY(18px);
+	text-align: center;
+	
+	> * { margin-top: 0; }
+	
+	.rights {
+		a:hover {
+			color: $white;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.footer-minimal-inner {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		text-align: center;
+		@include groupX(20px);
+	}
+}
+
+
+//
+// Footer Advanced
+//
+.footer-advanced {
+	&.bg-gray-700 {
+		#{headings()} {
+			color: $gray-300;
+		}
+	}
+	
+	h4 + *,
+	.heading-4 + * {
+		margin-top: 14px; 
+	}
+}
+
+.footer-advanced-main {
+	padding: 35px 0 15px;
+}
+
+.footer-advanced-aside {
+	padding: 30px 0;
+}
+
+.footer-advanced-layout {
+	@include groupY(18px);
+	text-align: center;
+
+	> * { margin-top: 0; }
+}
+
+@include media-breakpoint-between(md, lg) {
+	.footer-advanced {
+		.box-1 {
+			margin-left: 0;
+		}
+	}
+}
+
+@include media-breakpoint-between(lg, xl) {
+	.footer-advanced-text {
+		font-size: 14px;
+		line-height: 1.7;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.footer-advanced-main {
+		padding: 55px 0 20px;
+	}
+
+	.footer-advanced-aside {
+		padding: 35px 0;
+	}
+
+	.footer-advanced-layout {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		text-align: center;
+		@include groupX(20px);
+	}
+
+	.footer-advanced-aside + .container  { margin-top: 10px; }
+}
+
+@include media-breakpoint-up(xl) {
+	.footer-advanced {
+		h4 + *,
+		.heading-4 + * {
+			margin-top: 35px;
+		}
+	}
+
+
+	.footer-advanced-main {
+		padding: 80px 0 60px;
+	}
+
+	.footer-advanced-aside + .container  { margin-top: 20px; }
+}
+
+
+//
+// Footer Linked
+//
+.footer-linked {
+	&.bg-gray-700 {
+		#{headings()} {
+			color: $gray-300;
+		}
+
+		.list { 
+			color: $white;
+			
+			a:hover {
+				color: rgba($white, .6);
+			}
+		}
+	}
+	
+	h4 + *,
+	.heading-4 + * {
+		margin-top: 14px;
+	}
+
+	h4 + hr,
+	.heading-4 + hr {
+		margin-top: 15px;
+	}
+
+	* + .row { margin-top: 25px; }
+}
+
+.footer-linked-main {
+	padding: 35px 0 15px;
+}
+
+.footer-linked-aside {
+	padding: 30px 0;
+}
+
+.footer-linked-layout {
+	@include groupY(18px);
+	text-align: center;
+
+	> * { margin-top: 0; }
+}
+
+@include media-breakpoint-between(md, lg) {
+	.footer-linked {
+		.box-1 {
+			margin-left: 0;
+		}
+	}
+}
+
+@include media-breakpoint-between(lg, xl) {
+	.footer-linked-text {
+		font-size: 14px;
+		line-height: 1.7;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.footer-linked-main {
+		padding: 65px 0 40px;
+	}
+
+	.footer-linked-aside {
+		padding: 30px 0;
+	}
+
+	.footer-linked-layout {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		text-align: center;
+		@include groupX(20px);
+	}
+
+	.footer-linked-aside + .container  { margin-top: 10px; }
+}
+
+@include media-breakpoint-up(xl) {
+	.footer-linked {
+		h4 + *,
+		.heading-4 + * {
+			margin-top: 35px;
+		}
+	}
+
+
+	.footer-linked-main {
+		padding: 90px 0 60px;
+	}
+
+	.footer-linked-aside + .container  { margin-top: 20px; }
+}

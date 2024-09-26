@@ -1,0 +1,157 @@
+/**
+*
+* RD Navbar Corporate
+* 
+*/
+.rd-navbar-corporate {
+	// Static
+	&.rd-navbar-static {
+		border-bottom: 1px solid transparent;
+
+		.rd-navbar-aside-outer,
+		.rd-navbar-main-outer {
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+		}
+
+		.rd-navbar-aside,
+		.rd-navbar-main {
+			max-width: $rd-navbar-static-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		// RD Navbar Aside
+		.rd-navbar-aside {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 30px 0 40px;
+		}
+
+		// RD Navbar Brand
+		.rd-navbar-brand {
+			img {
+				width: auto;
+				height: auto;
+				max-width: 200px;
+				max-height: 200px;
+			}
+		}
+
+		// RD Navbar Main
+		.rd-navbar-main-outer {
+			background: $gray-100;
+		}
+
+		.rd-navbar-main {
+			position: relative;
+			padding: 16px 0;
+		}
+
+		.rd-navbar-nav-wrap {
+			position: relative;
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: space-between; 
+			min-width: 690px;
+		}
+
+		// RD Navbar Collapse 
+		
+		
+		.ie-10 &,
+		.ie-11 & {
+			.rd-navbar-collapse {
+				width: 100%;
+				max-width: 870px;
+			}
+			
+			.unit { 
+				flex: auto;
+			}
+		}
+		
+		.rd-navbar-panel + .rd-navbar-collapse {
+			margin-left: 50px; 
+		}
+		
+		.rd-navbar-collapse-content {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.button {
+				flex-shrink: 0;
+			}
+
+			> * { margin-top: 0; }
+			> * + * { margin-left: 50px; }
+		}
+		
+		.rd-menu {
+			margin-top: 21px;
+		}
+
+		.rd-navbar-megamenu {
+			margin-top: 24px;
+			max-width: 750px;
+		}
+
+		// RD Navbar Search
+		.rd-navbar-search {}
+
+		.rd-navbar-search-toggle { }
+
+		@include media-breakpoint-up(xl) {
+			.rd-navbar-collapse-content {
+				> * + * { margin-left: 92px; }
+			}
+
+			.rd-nav-item + .rd-nav-item {
+				margin-left: 55px;
+			}
+		}
+
+		&.rd-navbar--is-stuck,
+		&.rd-navbar--is-clone {
+			border-bottom-color: nth($rd-navbar-border, 3);
+
+			.rd-navbar-aside-outer {
+				display: none;
+			}
+			
+			.rd-navbar-nav-item {
+				> .rd-navbar-submenu {
+					margin-top: 17px;
+				}
+			}
+		}
+	}
+
+	// Fixed 
+	&.rd-navbar-fixed {
+		// RD Search
+		.rd-navbar-search {
+			margin: 20px 5px;
+		}
+		.rd-navbar-search-toggle {
+			display: none;
+		}
+
+		.rd-search {
+			position: relative;
+			top: 0;
+			left: 0;
+			transform: none;
+			opacity: 1;
+			visibility: visible;
+			z-index: 1;
+		}
+
+		.rd-navbar-nav {
+			margin: 0;
+		}
+	}
+}

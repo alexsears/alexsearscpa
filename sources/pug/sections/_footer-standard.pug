@@ -1,0 +1,42 @@
+mixin footer-standard(obj)
+	footer.section.footer-standard.bg-gray-700
+		.footer-standard-main
+			.container
+				.row.row-50
+					.col-lg-4: .inset-right-1
+						h4 About Us
+						p=obj.about 
+	
+					.col-sm-6.col-md-5.col-lg-4: .box-1
+						h4 Contact Information
+						ul.list-sm
+							li.object-inline
+								span.icon.icon-md.mdi.mdi-map-marker.text-gray-700
+								a.link-default(href='#') #[br] Katy, TX 77494 USA
+	
+							li.object-inline
+								span.icon.icon-md.mdi.mdi-phone.text-gray-700
+								a.link-default(href='tel:#') 832-677-0085
+	
+							li.object-inline
+								span.icon.icon-md.mdi.mdi-email.text-gray-700
+								a.link-default(href='mailto:#') info@alexsearscpa.com
+	
+					.col-sm-6.col-md-7.col-lg-4
+						h4 Newsletter
+						p Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.
+						// RD Mailform
+						form.rd-form.rd-mailform.form-inline(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+							.form-wrap
+								input.form-input(id="subscribe-form-2-email" type="email" name="email" data-constraints="@Email @Required")
+								label.form-label(for="subscribe-form-2-email") E-mail
+							.form-button
+								button.button.button-primary.button-icon.button-icon-only.button-winona(type="submit" aria-label='submit')
+									span.icon.mdi.mdi-email-outline
+	
+	
+		.container
+			.footer-standard-aside
+				a.brand(href='index.html')
+					+png(logo.light.trueSize)(srcset='static/images/' + logo.light.retina + '.png')
+				+rights

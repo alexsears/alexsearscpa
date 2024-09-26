@@ -1,0 +1,41 @@
+include ../components/_ui-progress-bar-linear
+	
+section.section.bg-gray-100
+	.range.justify-content-xl-between
+		.cell-lg-6.cell-xl-5.align-self-center.container
+			.row
+				.col-md-10.cell-inner: .section-lg.inset-right-2
+					h3.wow-outer: span.wow.slideInDown A Few Words About Us
+					p.wow.fadeIn Katy Accounting Firm combines the professionalism of a large global agency with hands‐on client focus of a small firm. We are unique for a company our size in offering an in‐house combination of public relations and creative services.
+					
+					.progress-linear-outer.wow-outer
+						+progress-bar-linear({
+							title: 'Branding',
+							valueTo: '90'
+						}).wow.slideInDown(data-wow-delay='.05s')
+						
+					.progress-linear-outer.wow-outer
+						+progress-bar-linear({
+							title: 'Web Design',
+							valueTo: '65'
+						}).wow.slideInDown(data-wow-delay='.1s')
+						
+					.progress-linear-outer.wow-outer
+						+progress-bar-linear({
+							title: 'Advertising',
+							valueTo: '100'
+						}).wow.slideInDown(data-wow-delay='.15s')
+					
+					.progress-linear-outer.wow-outer
+						+progress-bar-linear({
+							title: 'Strategy',
+							valueTo: '75'
+						}).wow.slideInDown(data-wow-delay='.2s')
+
+					.wow-outer.button-outer
+						a.button.button-primary.button-winona.wow.slideInUp(href='about-us.html') Learn more
+
+		.cell-lg-6.height-fill
+			.figure-card
+				.figure-card-sizer
+				+jpg('large-features-4-1214x792')

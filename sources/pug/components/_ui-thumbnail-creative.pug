@@ -1,0 +1,5 @@
+mixin thumbnail-creative(obj)
+	// Thumbnail Creative
+	a.thumbnail-creative(href=obj.link)&attributes(attributes)
+		+jpg(obj.img, 'thumbnail-creative-image')
+		h5.thumbnail-creative-title=obj.title

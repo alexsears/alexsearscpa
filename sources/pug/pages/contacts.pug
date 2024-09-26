@@ -1,0 +1,23 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'contacts'
+	- var pageName = 'Contacts'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	include ../sections/_section-contact-info
+	include ../sections/_section-contact-form-and-map
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

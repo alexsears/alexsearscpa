@@ -1,0 +1,85 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'About Us'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	include ../sections/_section-about-1
+
+	include ../sections/_section-our-history
+
+	// Who We Are
+	section.section.section-lg.section-last.text-center
+		.container
+			h3 Who We Are
+			.row.row-50
+				.col-sm-6.col-lg-4
+					// Profile Minimal
+					article.profile-minimal
+						+jpg('team-2-370x368', 'profile-minimal-image')
+						.profile-minimal-caption
+							h4.profile-minimal-title Jean Thompson
+							p.profile-minimal-position PR Manager
+
+				.col-sm-6.col-lg-4
+					// Profile Minimal
+					article.profile-minimal
+						+jpg('team-3-370x368', 'profile-minimal-image')
+						.profile-minimal-caption
+							h4.profile-minimal-title Brian Payne
+							p.profile-minimal-position Marketing Expert
+
+				.col-sm-6.col-lg-4
+					// Profile Minimal
+					article.profile-minimal
+						+jpg('team-1-370x368', 'profile-minimal-image')
+						.profile-minimal-caption
+							h4.profile-minimal-title Nathan Porter
+							p.profile-minimal-position CEO, Founder
+
+				.col-sm-6.col-lg-4
+					// Profile Minimal
+					article.profile-minimal
+						+jpg('team-4-370x368', 'profile-minimal-image')
+						.profile-minimal-caption
+							h4.profile-minimal-title Marie Fernandez
+							p.profile-minimal-position Marketing Manager
+
+				.col-sm-6.col-lg-4
+					// Profile Minimal
+					article.profile-minimal
+						+jpg('team-5-370x368', 'profile-minimal-image')
+						.profile-minimal-caption
+							h4.profile-minimal-title Sam Williams
+							p.profile-minimal-position Designer
+
+				.col-sm-6.col-lg-4
+					// Profile Minimal
+					article.profile-minimal
+						+jpg('team-6-370x368', 'profile-minimal-image')
+						.profile-minimal-caption
+							h4.profile-minimal-title Bruce Wilson
+							p.profile-minimal-position Accountant
+
+	// Latest News
+	section.section.section-lg.bg-gray-100
+		.container
+			h3.text-center Latest News
+			include ../includes/_row-news-post-layout
+
+	include ../sections/_section-thin-cta
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

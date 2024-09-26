@@ -1,0 +1,50 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-thumbnail-classic
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Portfolio & Galleries'
+
+block page
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Masonry without padding Layout
+	.section-sm.section-first
+		.container
+			h6 Masonry without padding Layout
+			include ../includes/_isotope-row-masonry-projects-modern-layout
+			
+
+	// Masonry Layout
+	.section-sm
+		.container: h6 Masonry Layout
+		section.section.section-lg.bg-gray-100.text-center
+			.container
+				h3 Our Projects
+				include ../includes/_isotope-row-masonry
+				a.button.button-lg.button-primary-outline.button-winona(href='masonry-layout.html') View all projects
+
+	// 4 column Layout
+	.section-sm
+		.container: h6 4 column Layout
+		include ../sections/_section-services
+
+	// Full-width gallery
+	.section-sm
+		.container: h6 Full-width gallery
+		include ../sections/_section-gallery-fullwidth
+
+	// Grid Layout
+	.section-sm.section-bottom-0
+		.container: h6 Grid Layout
+		include ../sections/_section-grid-layout
+
+	// Page Footer
+	include ../sections/_footer-minimal

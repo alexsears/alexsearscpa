@@ -1,0 +1,46 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Navigation Bars'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Standard header
+	.section-sm.section-first
+		.container
+			h6 Standard header
+		.layout-navbar-demo
+			include ../sections/_header-minimal
+
+	// Corporate header
+	.section-sm
+		.container
+			h6 Corporate header
+		.layout-navbar-demo
+			include ../sections/_header-corporate
+
+	// Modern header
+	.section-sm
+		.container
+			h6 Modern header
+		.layout-navbar-demo.bg-image.bg-gray-700(style='background-image: url(static/images/navigation-bars-1-1920x608.jpg);')
+			include ../sections/_header-minimal-transparent
+
+	// Thin header
+	.section-sm.section-last
+		.container
+			h6 Thin header
+		.layout-navbar-demo.layout-navbar-demo-lg
+			include ../sections/_header-thin
+
+
+	// Page Footer
+	include ../sections/_footer-minimal

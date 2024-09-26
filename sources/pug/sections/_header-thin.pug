@@ -1,0 +1,102 @@
+- navbarCounter++
+
+header.section.page-header
+	// RD Navbar
+	.rd-navbar-wrap.context-dark
+		nav.rd-navbar.rd-navbar-thin(
+		data-layout=                'rd-navbar-fixed'
+		data-sm-layout=             'rd-navbar-fixed'
+		data-md-layout=             'rd-navbar-fixed'
+		data-md-device-layout=      'rd-navbar-fixed'
+		data-lg-layout=             'rd-navbar-static'
+		data-lg-device-layout=      'rd-navbar-fixed'
+		data-xl-layout=             'rd-navbar-static'
+		data-xl-device-layout=      'rd-navbar-fixed'
+		data-xxl-layout=            'rd-navbar-static'
+		data-xxl-device-layout=     'rd-navbar-static'
+		data-lg-stick-up-offset=    '46px'
+		data-xl-stick-up-offset=    '46px'
+		data-xxl-stick-up-offset=   '46px'
+		data-lg-stick-up=           'true'
+		data-xl-stick-up=           'true'
+		data-xxl-stick-up=          'true')
+			.rd-navbar-main-outer
+				.rd-navbar-main
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='#rd-navbar-nav-wrap-' + navbarCounter): span
+							
+						// RD Navbar Brand
+						a.rd-navbar-brand(href='index.html')
+							+png(logo.inverse.trueSize)(srcset='static/images/' + logo.inverse.retina + '.png')
+
+						.rd-navbar-block
+							ul.list-inline-bordered
+								li
+									button.rd-navbar-popup-toggle(data-rd-navbar-toggle='#rd-navbar-login-' + navbarCounter) Login
+									div.rd-navbar-popup.bg-gray-700(id='rd-navbar-login-' + navbarCounter)
+										h4 Sign In
+										form.rd-form.rd-form-small
+											.form-wrap
+												input.form-input(id='login-email-' + navbarCounter type='email' name='email' data-constraints='@Email @Required')
+												label.form-label(for='login-email-' + navbarCounter) E-mail
+
+											.form-wrap
+												input.form-input(id='login-password-' + navbarCounter type='password' name='password' data-constraints='@Required')
+												label.form-label(for='login-password-' + navbarCounter) Password
+
+											.form-wrap
+												button.button.button-primary-lighten.button-winona(type='submit') Sign in
+								li
+									button.rd-navbar-popup-toggle(data-rd-navbar-toggle='#rd-navbar-register-' + navbarCounter) Registration
+									div.rd-navbar-popup.bg-gray-700(id='rd-navbar-register-' + navbarCounter)
+										h4 Registration
+										form.rd-form.rd-form-small
+											.form-wrap
+												input.form-input(id='register-name-' + navbarCounter type='text' name='username' data-constraints='@Required')
+												label.form-label(for='register-name-' + navbarCounter) Username
+
+											.form-wrap
+												input.form-input(id='register-email-' + navbarCounter type='email' name='email' data-constraints='@Email @Required')
+												label.form-label(for='register-email-' + navbarCounter) E-mail
+
+											.form-wrap
+												input.form-input(id='register-password-' + navbarCounter type='password' name='password' data-constraints='@Required')
+												label.form-label(for='register-password-' + navbarCounter) Password
+
+											.form-wrap
+												input.form-input(id='register-password-confirm-' + navbarCounter type='password' name='password' data-constraints='@Required')
+												label.form-label(for='register-password-confirm-' + navbarCounter) Confirm Password
+
+											.form-wrap
+												button.button.button-block.button-primary-lighten.button-winona(type='submit') Create an Account
+
+											.form-wrap
+												.text-decoration-lines
+													span.text-decoration-lines-content or enter with
+
+											.form-wrap
+												.button-group 
+													a.button.button-facebook.button-icon.button-icon-only.button-winona(href='#' aria-label='Facebook'): span.icon.mdi.mdi.mdi-facebook
+													a.button.button-twitter.button-icon.button-icon-only.button-winona(href='#' aria-label='Twitter'): span.icon.mdi.mdi-twitter
+													a.button.button-google.button-icon.button-icon-only.button-winona(href='#' aria-label='Google+'): span.icon.mdi.mdi-google
+
+							
+							button.rd-navbar-search-toggle(data-rd-navbar-toggle='#rd-navbar-search-' + navbarCounter): span
+					
+					// RD Navbar Search
+					.rd-navbar-search(id='rd-navbar-search-' + navbarCounter)
+						form.rd-search(action='search-results.html' data-search-live='rd-search-results-live-' + navbarCounter, method='GET')
+							.form-wrap
+								label.form-label(for='rd-navbar-search-form-input-' + navbarCounter) Search...
+								input.form-input(class='rd-navbar-search-form-input' id='rd-navbar-search-form-input-' + navbarCounter, type='text' name='s' autocomplete="off")
+								.rd-search-results-live(id='rd-search-results-live-' + navbarCounter)
+							button.rd-search-form-submit.fa-search(type='submit')
+							
+					.rd-navbar-nav-wrap(id='rd-navbar-nav-wrap-' + navbarCounter)
+						// RD Navbar Brand
+						a.rd-navbar-brand(href='index.html')
+							+png(logo.inverse.trueSize)(srcset='static/images/' + logo.inverse.retina + '.png')
+							
+						include ../includes/_navigation

@@ -1,0 +1,133 @@
+/*
+*
+* Breadcrumbs
+*/
+$breadcrumb-padding-vertical: 8px;
+$breadcrumb-padding-horizontal: 15px;
+$breadcrumb-bg: $gray-700;
+$breadcrumb-color: $gray-300;
+$breadcrumb-hover-color: $white;
+$breadcrumb-separator: "\f105";
+
+.breadcrumbs-custom {
+	position: relative;
+	display: flex;
+	background-color: $breadcrumb-bg;
+	background-position: 20% 20%;
+
+	.breadcrumbs-custom-subtitle {
+			color: $gray-300;
+	}
+}
+
+.breadcrumbs-custom-inner {
+	display: flex;
+	min-height: inherit;
+	width: 100%;
+	padding: 50px 0 25px;
+}
+
+.breadcrumbs-custom-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  &::before {
+    content: '';
+    display: block;
+  }
+}
+
+.breadcrumbs-custom-main {
+	
+}
+
+.breadcrumbs-custom-path {
+	@include spacingX(30px);
+
+	li {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		color: $breadcrumb-color;
+
+		&::after {
+			content: $breadcrumb-separator;
+			font-family: $fa;
+			position: absolute;
+			top: 51%;
+			right: -5px;
+			display: inline-block;
+			font-size: inherit;
+			font-style: normal;
+			color: rgba($white, .5);
+			transform: translate3d(0, -50%, 0);
+		}
+	}
+
+	li:last-child {
+		&:after {
+			display: none;
+		}
+	}
+
+	a {
+		display: inline;
+		vertical-align: middle;
+		&,
+		&:active,
+		&:focus {
+			color: $breadcrumb-color;
+		}
+	}
+ 
+	a:hover {
+		color: $breadcrumb-hover-color;
+	}
+}
+
+.breadcrumbs-custom-subtitle { }
+
+* + .breadcrumbs-custom-path { margin-top: 25px; }
+.breadcrumbs-custom-subtitle + .breadcrumbs-custom-title { margin-top: 15px; }
+
+@include media-breakpoint-up(sm) {
+	
+	.breadcrumbs-custom-path {
+		@include spacingX(60px);
+	}
+
+	* + .breadcrumbs-custom-path { margin-top: 30px; }
+}
+
+@include media-breakpoint-up(md) {
+	.breadcrumbs-custom {
+		min-height: (456 / 1920) * 100vw;
+	}
+	
+	.breadcrumbs-custom-inner {
+		padding: 80px 0 30px;
+	}
+
+	.breadcrumbs-custom-subtitle + .breadcrumbs-custom-title { margin-top: 5px; }
+}
+
+@include media-breakpoint-up(lg) {
+	.breadcrumbs-custom-inner {
+		padding-bottom: 40px;
+	}
+
+	.breadcrumbs-custom-subtitle + .breadcrumbs-custom-title { margin-top: 10px; }
+}
+
+@include media-breakpoint-up(xxl) {
+	.breadcrumbs-custom {
+		min-height: 456px;
+	}
+
+	.breadcrumbs-custom-inner {
+		padding: 50px 0 40px;
+	}
+
+	.breadcrumbs-custom-subtitle + .breadcrumbs-custom-title { margin-top: 20px; }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "alexsearscpa",
+  "version": "1.0.0",
+  "description": "Alex Sears CPA website",
+  "main": "main.py",
+  "scripts": {
+    "start": "python main.py",
+    "deploy": "gcloud run deploy alexsearscpa --source . --region us-central1 --set-env-vars MAIL_SERVER=us2.smtp.alexsearscpa.com,MAIL_PORT=587,MAIL_USE_TLS=true,MAIL_USE_SSL=false,MAIL_USERNAME=info@alexsearscpa.com,MAIL_PASSWORD=GaaDsKWFY8,GOOGLE_MAPS_API_KEY=AIzaSyA53tgZhMjlhi2PxLhoLWKfYRLPqNM_OpM,RECAPTCHA_SECRET_KEY=6LeCXAkqAAAAABial8NaeslVkxOkPvv1_3fqeJcp"
+  },
+  "author": "Alex Sears",
+  "license": "ISC",
+  "dependencies": {
+    "git": "^0.1.5"
+  }
+}

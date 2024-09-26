@@ -1,0 +1,6 @@
+mixin thumbnail-modern(obj)
+	// Thumbnail Modern
+	a.thumbnail-modern(href=obj.original data-lightgallery='item')&attributes(attributes)
+		+jpg(obj.img, 'thumbnail-modern-image')
+		.thumbnail-modern-caption: span.icon.mdi.mdi-magnify 
+		.thumbnail-modern-dummy

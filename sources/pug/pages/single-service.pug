@@ -1,0 +1,104 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+include ../components/_ui-career-classic
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Single Service'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+	
+	include ../sections/_section-small-features
+
+	// About This Service
+	section.section.section-lg
+		.container
+			.row.row-50.justify-content-center.justify-content-lg-between.flex-lg-row-reverse
+				.col-lg-6.col-xl-5: .inset-right-3
+					h3 About This Service
+					h5 Get a complete bookkeeping solution for your business including: bank reconciliations, customer invoicing and collections and more.
+					p This service offers a full solution for all your accounting needs including payroll, business start up analysis, audits, business project analysis. We specialize in tax preparation and small business accounting.
+					a.button.button-lg.button-primary.button-winona(href='#') Learn more
+
+				.col-lg-6
+					.d3-chart-wrap: #line-chart.d3-chart
+
+	// Pricing
+	section.section.section-lg.bg-gray-100
+		.container
+			h3.text-center Pricing
+			include ../includes/_row-pricing-3-columns
+
+	section.section.section-md.bg-primary-darker.text-center
+		.container
+			.box-cta-1
+				h3 We Offer Quality #[span.fw-bold Accounting Support]
+				a.button.button-lg.button-primary.button-winona(href='#') Free consultation
+
+	// Testimonials
+	section.section.section-lg.text-center
+		.container
+			h3.wow-outer: span.wow.slideInDown Testimonials
+			// Owl Carousel
+			.owl-carousel.wow.fadeIn(
+			data-items='1'
+			data-md-items='2'
+			data-lg-items='3'
+			data-dots='true'
+			data-nav='false'
+			data-loop='true'
+			data-margin='30'
+			data-autoplay="true"
+			data-stage-padding='0'
+			data-mouse-drag="false")
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-3-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Albert Webb
+							p.quote-classic-caption CEO at Majestic
+					.quote-classic-text
+						p Raptus, peritus adelphiss aegre imperium de velox, secundus competition. Hippotoxota de gratis ignigena, imperium liberi! Capio de talis historia, visum galatae! Vae, clemens magister! Salvus, fidelis fidess vix gratia de grandis, placidus bursa.
+
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-1-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Kelly McMillan
+							p.quote-classic-caption Private Entrepreneur
+					.quote-classic-text
+						p Zeluss nocere in secundus brema! Abnoba teres spatii est. Nunquam talem calceus. Cum pulchritudine observare, omnes accentores prensionem camerarius, lotus repressores. Lotus, talis equisos vix transferre de emeritis, domesticus nixus!
+
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-2-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Harold Barnett
+							p.quote-classic-caption Regional Manager
+					.quote-classic-text
+						p Sunt adelphises visum salvus, superbus galataees. Zeluss sunt gloss de bassus habena. Est gratis decor, cesaris. Azureus, fidelis abnobas interdum acquirere de raptus, noster fortis.
+
+				blockquote.quote-classic
+					.quote-classic-meta
+						.quote-classic-avatar: +jpg('testimonials-person-5-96x96')
+						.quote-classic-info
+							cite.quote-classic-cite Bill Warner
+							p.quote-classic-caption Private Entrepreneur
+					.quote-classic-text
+						p Sunt repressores dignus bi-color, fortis particulaes. Sunt navises quaestio germanus, bassus gemnaes. Ignigenas sunt pulchritudines de camerarius calcaria. Albus messor mechanice experientias nuptia est.
+
+
+	// Page Footer
+	include ../sections/_footer-standard
+	+footer-standard({
+		about: 'Katy Accounting Firm is one of the highest rated and most recommended business management companies. We employ the best experts in the nation, while also using innovative techniques to attract more customers to your company.'
+	})

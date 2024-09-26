@@ -1,0 +1,54 @@
+include ../components/_ui-thumbnail-classic
+	
+section.section.section-lg.text-center
+	.container
+		h3.wow-outer: span.wow.slideInUp Our Projects
+		p.wow-outer: span.text-width-1.wow.slideInDown Take a look at some of our projects that we have recently finished. Every project involved hours of research to create a solution tailored to the needs of our customers.
+		.row.row-30.offset-top-4.hoverdir
+			.col-sm-6.col-lg-4.wow-outer
+				+thumbnail-classic({
+					img: 'grid-layout-1-370x256',
+					link: 'single-project.html',
+					title: 'iGadget',
+					text: 'Art Direction, Design, Production'
+				}).thumbnail-classic-sm.wow.slideInLeft.hoverdir-item(data-hoverdir-target='.thumbnail-classic-caption')
+
+			.col-sm-6.col-lg-4.wow-outer
+				+thumbnail-classic({
+					img: 'grid-layout-2-370x256',
+					link: 'single-project.html',
+					title: 'Computerize Ltd.',
+					text: 'Event Organization, Branding'
+				}).thumbnail-classic-sm.wow.slideInLeft.hoverdir-item(data-hoverdir-target='.thumbnail-classic-caption')
+
+			.col-sm-6.col-lg-4.wow-outer
+				+thumbnail-classic({
+					img: 'grid-layout-3-370x256',
+					link: 'single-project.html',
+					title: 'MNGRZ Co.',
+					text: 'Strategic Planning, Digital Marketing'
+				}).thumbnail-classic-sm.wow.slideInLeft.hoverdir-item(data-hoverdir-target='.thumbnail-classic-caption')
+
+			.col-sm-6.col-lg-4.wow-outer
+				+thumbnail-classic({
+					img: 'grid-layout-4-370x256',
+					link: 'single-project.html',
+					title: 'CompuTerra',
+					text: 'Email Marketing, Branding'
+				}).thumbnail-classic-sm.wow.slideInRight.hoverdir-item(data-hoverdir-target='.thumbnail-classic-caption')
+
+			.col-sm-6.col-lg-4.wow-outer
+				+thumbnail-classic({
+					img: 'grid-layout-5-370x256',
+					link: 'single-project.html',
+					title: 'Fruits Inc.',
+					text: 'Customer Support, Web Design'
+				}).thumbnail-classic-sm.wow.slideInRight.hoverdir-item(data-hoverdir-target='.thumbnail-classic-caption')
+
+			.col-sm-6.col-lg-4.wow-outer
+				+thumbnail-classic({
+					img: 'grid-layout-6-370x256',
+					link: 'single-project.html',
+					title: 'Accessories',
+					text: 'Content Creation, SEO'
+				}).thumbnail-classic-sm.wow.slideInRight.hoverdir-item(data-hoverdir-target='.thumbnail-classic-caption')

@@ -1,0 +1,42 @@
+include ../components/_ui-card
+	
+.row.row-50.justify-content-lg-between.flex-lg-row-reverse.offset-top-1
+	.col-lg-7.col-xl-6
+		h3.wow-outer: span.wow.slideInDown Frequently Asked Questions
+		// Bootstrap collapse
+		#accordion2.card-group-custom.card-group-corporate.wow-outer(role='tablist' aria-multiselectable='false')
+			+card({
+				show: true,
+				cardClass: 'card-corporate',
+				parentId: 'accordion2',
+				number: '1',
+				header: 'What are the advantages of purchasing a website template?'
+			}).wow.fadeInDown(data-wow-delay='.05s')
+				p The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. Second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality.
+
+			+card({
+				cardClass: 'card-corporate',
+				parentId: 'accordion2',
+				number: '2',
+				header: 'Do you provide any scripts with your templates or could you do some custom programming?'
+			}).wow.fadeInDown(data-wow-delay='.1s')
+				p Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.zemez.io If you are not sure that the element you’re interested in is active please contact our Support Chat for clarification.
+
+			+card({
+				cardClass: 'card-corporate',
+				parentId: 'accordion2',
+				number: '3',
+				header: 'What do I receive when I order a template from Zemez?'
+			}).wow.fadeInDown(data-wow-delay='.15s')
+				p After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.
+
+			+card({
+				cardClass: 'card-corporate',
+				parentId: 'accordion2',
+				number: '4',
+				header: 'In what formats are your templates available?'
+			}).wow.fadeInDown(data-wow-delay='.2s')
+				p Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file. In most templates, HTML is compatible with Adobe® Dreamweaver® and Microsoft® FrontPage®.
+
+	.col-lg-5.wow-outer
+		+jpg('accordions-1-470x368').wow.slideInLeft

@@ -1,0 +1,262 @@
+/*
+*
+* Pricing tables
+*/
+
+// 
+// Table of contents: 
+//
+// Pricing Minimal
+// Pricing Modern
+//
+
+
+//
+// Pricing Minimal
+//
+.pricing-minimal {
+	position: relative;
+	z-index: 1;
+	padding: 25px 20px;
+	border: 1px solid $gray-300;
+	border-radius: $border-radius-lg;
+	text-align: left;
+	transition: .22s;
+	cursor: default;
+	
+	
+	&:hover {
+		border-color: $primary;
+		
+		&::before {
+			visibility: visible;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+.pricing-minimal-price {
+	font-size: 26px;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: 0;
+	color: $gray-700;
+	
+	span {
+		display: inline;
+	}
+}
+
+.pricing-minimal-price-currency {
+	font-size: .65em;
+	vertical-align: top;
+}
+
+.pricing-minimal-divider {
+	border-bottom: 1px solid $gray-300;
+}
+
+* + .pricing-minimal-price { margin-top: 10px; }
+* + .pricing-minimal-divider { margin-top: 20px; }
+
+@include media-breakpoint-down(sm) {
+  .pricing-minimal {
+		max-width: 350px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@include media-breakpoint-up(sm) {
+  .pricing-minimal {
+		padding: 20px;
+	} 
+}
+
+@include media-breakpoint-up(md) {
+	.pricing-minimal-price {
+		font-size: 36px;
+	}
+}
+
+@include media-breakpoint-up(md) {  
+	.pricing-minimal {
+		padding: 30px 38px;
+	}
+}
+
+@include media-breakpoint-between(lg, xl) {
+	.pricing-minimal {
+		padding: 25px 20px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+  .pricing-minimal {
+		padding: 38px 40px;
+	} 
+} 
+
+
+//
+// Pricing Modern
+//
+.pricing-modern {
+	padding: 35px 20px;
+	border: 1px solid $gray-300;
+	border-radius: $border-radius-lg;
+	text-align: center;
+	
+	* + .button { margin-top: 20px; }
+}
+
+.pricing-group-modern {
+	border: 1px solid $gray-300;
+	border-radius: $border-radius-lg;
+
+	.pricing-modern {
+		border: 0;
+		border-radius: 0;
+	}
+}
+
+.pricing-modern-rating {
+	color: $primary;
+	
+	> li {
+		display: inline-block;
+		width: 26px;
+		font-size: 30px;
+		line-height: .9;
+	}
+}
+
+.pricing-modern-title {
+	font-weight: 700;
+}
+
+.pricing-modern-table {
+	display: inline-table;
+	
+	td {
+		padding: 3px 8px;
+		color: $gray-400;
+	}
+	
+	td:first-child {
+		text-align: right;
+		color: $gray-700;
+	}
+	
+	td:last-child {
+		text-align: left;
+	}
+}
+
+.pricing-modern-price {
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 1.2;
+	
+	span {
+		display: inline;
+	}
+}
+
+.pricing-modern-price-currency {
+	font-size: .65em;
+	vertical-align: top;
+}
+
+* + .pricing-group-modern { margin-top: 35px; }
+* + .pricing-modern-title { margin-top: 5px; }
+* + .pricing-modern-table { margin-top: 20px; }
+* + .pricing-modern-price { margin-top: 15px; }
+
+@include media-breakpoint-down(sm) {
+	.pricing-group-modern {
+		max-width: 360px;
+		margin-left: auto;
+		margin-right: auto;
+		.pricing-modern + .pricing-modern { border-top: 1px solid $gray-300; }
+	}
+}
+
+@include media-breakpoint-between(sm, lg) {
+	.pricing-group-modern {
+		.pricing-modern {
+			&:nth-child(odd) {
+				border-right: 1px solid $gray-300;
+			}
+			&:nth-child(n + 3) {
+				border-top: 1px solid $gray-300;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.pricing-group-modern {
+		display: flex;
+		flex-wrap: wrap;
+		
+		.pricing-modern {
+			width: 100%;
+			max-width: 50%;
+		}
+	}
+	
+	.pricing-modern {
+		padding: 55px 20px;
+	}
+
+	* + .pricing-group-modern { margin-top: 50px; }
+	* + .pricing-modern-table { margin-top: 25px; }
+	* + .pricing-modern-price { margin-top: 30px; }
+}
+
+@include media-breakpoint-up(md) {
+	.pricing-modern-price {
+		font-size: 30px;
+	} 
+}
+
+@include media-breakpoint-up(lg) {
+	.pricing-group-modern {
+		.pricing-modern {
+			max-width: 25%;
+			border-right: 1px solid $gray-300;
+			
+			&:nth-child(4n) {
+				border-right: 0;
+			}
+			
+			&:nth-child(n + 5) {
+				border-top: 1px solid $gray-300;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-between(lg, xl) {
+  .pricing-modern {
+		.button {
+			display: block;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.pricing-modern-price {
+		font-size: 36px;
+	}
+
+	* + .pricing-modern-table { margin-top: 35px; }
+	* + .pricing-modern-price { margin-top: 40px; }
+} 
+
+@include media-breakpoint-up(xxl) {
+	* + .pricing-group-modern { margin-top: 75px; } 
+} 

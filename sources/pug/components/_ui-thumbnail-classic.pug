@@ -1,0 +1,8 @@
+mixin thumbnail-classic(obj)
+	// Thumbnail Classic
+	a.thumbnail-classic(href=obj.link)&attributes(attributes)
+		+jpg(obj.img, 'thumbnail-classic-image')
+		.thumbnail-classic-caption
+			p.thumbnail-classic-title=obj.title 
+			p.thumbnail-classic-text=obj.text
+		.thumbnail-classic-dummy

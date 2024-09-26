@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Maps & Contacts'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+	
+	// Full-width map
+	.section-sm.section-first
+		.container: h6 Full-width map
+		include ../sections/_section-google-map
+									
+	// Map & contact form
+	.section-sm
+		.container: h6 Map & contact form
+		include ../sections/_section-contact-form-and-map
+			
+	// Map & contact information
+	.section-sm.section-last
+		.container: h6 Map & contact information
+		include ../sections/_section-map-and-contact-info
+
+	// Page Footer
+	include ../sections/_footer-minimal

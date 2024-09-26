@@ -1,0 +1,40 @@
+include ../components/_ui-progress-bar-linear
+	
+section.section.section-md
+	.container
+		// Profile Modern
+		article.profile-modern
+			.profile-modern-figure
+				+jpg('team-1-336x336', 'profile-modern-image')
+				a.profile-modern-button(href='#')
+					span.icon.mdi.mdi-facebook-messenger
+					span.icon.mdi.mdi-facebook-messenger
+
+			.profile-modern-main
+				.profile-modern-header
+					.profile-modern-header-item
+						h3 Nathan Porter
+						p Founder, CEO
+
+					.profile-modern-item
+						include ../includes/_group-social-buttons
+
+				.row.row-30
+					.col-lg-6
+						p Mr. Porter founded our company in 1995 with a vision to help companies in the US achieve more. Today he manages the most important processes of Katy Accounting Firm. He also represents us at meetings and negotiations with international partners and clients whose companies are located overseas as well as in the USA.
+
+					.col-lg-6
+						+progress-bar-linear({
+							title: 'Accounting',
+							valueTo: '90'
+						})
+
+						+progress-bar-linear({
+							title: 'Web Design',
+							valueTo: '65'
+						})
+
+						+progress-bar-linear({
+							title: 'Advertising',
+							valueTo: '100'
+						})

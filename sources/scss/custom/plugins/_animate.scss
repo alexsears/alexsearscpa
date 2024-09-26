@@ -1,0 +1,382 @@
+/*
+*
+* Animate.css
+*/
+
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	opacity: 1;
+}
+
+.animated.infinite {
+	animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+	animation-duration: 2s;
+}
+
+html:not(.lt-ie10) .not-animated {
+	opacity: 0;
+}
+
+//
+// FadeIn Keyframes Animation
+//
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.fadeIn {
+	animation-name: fadeIn;
+}
+
+//
+// FadeInUp Keyframes Animation
+//
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInUp {
+	animation-name: fadeInUp;
+}
+
+//
+// FadeInDown Keyframes Animation
+//
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInDown {
+	animation-name: fadeInDown;
+}
+
+//
+// FadeInLeft Keyframes Animation
+//
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInLeft {
+	animation-name: fadeInLeft;
+}
+
+//
+// FadeInRight Keyframes Animation
+//
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInRight {
+	animation-name: fadeInRight;
+}
+
+//
+// FadeOut Keyframes Animation
+//
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.fadeOut {
+	animation-name: fadeOut;
+}
+
+//
+// SlideInDown Keyframes Animation
+//
+@keyframes slideInDown {
+	0% {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.slideInDown {
+	animation-name: slideInDown;
+}
+
+//
+// SlideInUp Keyframes Animation
+//
+@keyframes slideInUp {
+	0% {
+		transform: translate3d(0, 100%, 0);
+		visibility: visible;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.slideInUp {
+	animation-name: slideInUp;
+}
+
+// 
+// SlideInLeft Keyframes Animation
+//
+@keyframes slideInLeft {
+	0% {
+		transform: translate3d(-100%, 0, 0);
+		visibility: visible;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.slideInLeft {
+	animation-name: slideInLeft;
+}
+
+//
+// SlideInRight Keyframes Animation
+//
+@keyframes slideInRight {
+	0% {
+		transform: translate3d(100%, 0, 0);
+		visibility: visible;
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.slideInRight {
+	animation-name: slideInRight;
+}
+
+//
+// SlideOutDown Keyframes Animation
+//
+@keyframes slideOutDown {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	100% {
+		visibility: hidden;
+		transform: translate3d(0, 100%, 0);
+	}
+}
+
+.slideOutDown {
+	animation-name: slideOutDown;
+}
+
+
+// Custom
+@keyframes scaleInY {
+	0% {
+		top: 0;
+		bottom: 100%;
+	}
+
+	50% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	100% {
+		top: 100%;
+		bottom: auto;
+		transform: scale3d(1, 0, 1);
+	}
+}
+
+//
+// scaleFadeIn Keyframes Animation
+//
+@keyframes scaleFadeIn {
+	0% {
+		height: 0;
+	}
+
+	100% {
+		height: 100%;
+	}
+}
+
+.scaleFadeIn {
+	display: flex;
+	overflow: hidden;
+	animation-name: scaleFadeIn;
+	animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+}
+
+.scaleFadeInWrap {
+	display: flex;
+	align-items: stretch;
+}
+
+//
+// Wow Outer
+//
+.wow-outer {
+	position: relative;
+	overflow: hidden;
+}
+
+// scaleInVertical
+@keyframes scaleInVertical {
+	0% {
+		transform: scale3d(1, 0, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.scaleInVertical {
+	animation-name: scaleInVertical;
+}
+
+
+
+//
+// FadeInLeftSmall Keyframes Animation
+//
+@keyframes fadeInLeftSmall {
+	0% {
+		opacity: 0;
+		transform: translate3d(-20px, 0, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInLeftSmall {
+	animation-name: fadeInLeftSmall;
+}
+
+
+//
+// FadeInUpSmall Keyframes Animation
+//
+@keyframes fadeInUpSmall { 
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 20px, 0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.fadeInUpSmall {
+	animation-name: fadeInUpSmall;
+}
+
+
+//
+// FadeSlideInDown Keyframes Animation
+//
+@keyframes fadeSlideInDown {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -50%, 0);
+		visibility: visible;
+	}
+	
+	10% {
+		opacity: 1;
+	} 
+	 
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.fadeSlideInDown {
+	animation-name: fadeSlideInDown;
+}
+
+//
+// FadeSlideInUp Keyframes Animation
+//
+@keyframes fadeSlideInUp {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 50%, 0);
+		visibility: visible;
+	}
+	
+	10% {
+		opacity: 1;
+	} 
+	 
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.fadeSlideInUp {
+	animation-name: fadeSlideInUp;
+}
+
+
+.wow {
+	backface-visibility: hidden;
+}

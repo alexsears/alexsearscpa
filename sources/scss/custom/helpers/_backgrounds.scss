@@ -1,0 +1,180 @@
+/*
+*
+* Backgrounds
+*/
+
+
+%context-dark {
+	&,
+	#{headings()} {
+		color: $white;
+	}
+
+	p a {
+		color: inherit;
+	}
+
+	.big {
+		color: $white;
+	}
+	
+	// Logo
+	.brand {
+		.brand-logo-dark { display: none; }
+		.brand-logo-light { display: block; }
+	}
+
+	// Buttons
+	.button-primary {
+		&:hover {
+			background: $primary-lighten;
+			border-color: $primary-lighten;
+		}
+	}
+}
+
+%context-light {
+	color: $body-color;
+
+	#{headings()} {
+		color: $headings-color;
+	}
+
+	// Logo
+	.brand {
+		.brand-logo-dark { display: block; }
+		.brand-logo-light { display: none; }
+	}
+}
+
+/**
+* Light Backgrounds
+*/
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+/**
+* Dark Backgrounds
+*/
+.context-dark {
+	@extend %context-dark;
+}
+
+.bg-gray-700 {
+	color: $gray-300;
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+
+	a {
+		color: inherit;
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	p a {
+		&:hover {
+			color: $white;
+		}
+	}
+}
+ 
+.bg-gray-800 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-800);
+	
+	// Rights
+	.rights {
+		color: $gray-400;
+	}
+}
+
+/** 
+* Accent Backgrounds
+*/
+.bg-primary {
+	@extend %context-dark;
+	@include bg-behaviour($primary);
+}
+
+.bg-primary-darker {
+	@extend %context-dark;
+	@include bg-behaviour($primary-darker);
+}
+
+/**
+* Background Image
+*/
+.bg-image { }
+
+[class*='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+.bg-image-light {
+	@include media-breakpoint-down(xl) {
+		position: relative;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba($white, .1);
+		}
+	}
+}
+
+.bg-image-1 {
+	position: relative;
+	background-position: 30% 100%;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: $gray-700;
+		opacity: .6;
+	}
+
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+
+
+	@include media-breakpoint-up(sm) {
+		background-position: 72% 100%;
+
+		&::before {
+			opacity: .2;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		background-position: 54% 100%;
+
+		&::before {
+			display: none;
+		}
+	}
+}
+
+// Desktop only
+//
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+ 

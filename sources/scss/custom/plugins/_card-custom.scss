@@ -1,0 +1,182 @@
+//
+// Card custom styles
+// 
+
+// Light
+//
+$accordion-corporate-color: $gray-700;
+$accordion-corporate-hover-color: $primary;
+$accordion-corporate-background: $white;
+$accordion-corporate-border: $gray-100;
+$accordion-corporate-content-color: $body-color;
+$accordion-corporate-arrow-color: $primary;
+$accordion-corporate-border-radius: 6px;
+$accordion-corporate-header-padding: 15px 40px 15px 70px;
+$accordion-corporate-content-padding: 2px 44px 25px nth($accordion-corporate-header-padding, 4);
+
+// Card groups
+.card-group-custom {
+	margin-bottom: 0;
+
+	.card-header + .collapse > .card-body,
+	.card-header + .collapse > .list-group {
+		border-top: 0;
+	}
+
+	.card + .card {
+		margin-top: 0;
+	}
+}
+
+.card-title {
+	margin-bottom: 0;
+}
+
+.card-custom {
+	display: block;
+	margin: 0;
+	background: inherit;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	text-align: left;
+
+	a {
+		display: block;
+	}
+
+	// Card heading
+	.card-header {
+		padding: 0;
+		border-bottom: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	// Card contents
+	.card-body {
+		padding: 0;
+		border: 0;
+	}
+}
+
+* + .card-group-custom {
+	margin-top: 30px;
+
+	@include media-breakpoint-up(md) {
+		margin-top: 40px;
+	}
+}
+/* 
+* Card corporate
+*/
+.card-corporate {
+	border-top: 1px solid $accordion-corporate-border;
+	text-align: left;
+
+	&:last-child {
+		border-bottom: 1px solid $accordion-corporate-border;
+	}
+	
+	.card-collapse {
+		background: $accordion-corporate-background;
+	}
+
+	.card-title a {
+		position: relative;
+		z-index: 1;
+		padding: $accordion-corporate-header-padding;
+		font-size: 17px;
+		line-height: 1.5;
+		letter-spacing: 0;
+		color: $accordion-corporate-color;
+		transition: 1.3s all ease;
+		
+		&[aria-expanded='true'],
+		&:hover {
+			color: $accordion-corporate-hover-color;
+		}
+
+		// Open state
+		.card-arrow {
+			transition: .33s;
+		}
+
+		// Collapsed state
+		&.collapsed {
+			color: $accordion-corporate-color;
+			border-bottom-width: 0;
+
+			.card-arrow {
+				&::before { opacity: 1; }
+				&::after { opacity: 0; }
+			}
+		}
+	}
+
+	// Card arrow
+	.card-arrow {
+		position: absolute;
+		top: nth($accordion-corporate-header-padding, 1) + 1px;
+		left: 13px;
+		z-index: 2;
+		width: 20px;
+		height: 20px;
+		color: $accordion-corporate-arrow-color;
+		transition: .33s all ease;
+		text-align: center;
+
+		&::before,
+		&::after {
+			position: absolute;
+			z-index: 4;
+			font-family: 'Material Design Icons';
+			font-size: 24px;
+			line-height: 1;
+			transition: .22s;
+		}
+
+		&::before {
+			content: '\f505';
+			opacity: 0;
+		}
+
+		&::after {
+			content: '\f466';
+			opacity: 1;
+		}
+	}
+
+	.card-collapse {
+		position: relative;
+		z-index: 1;
+		color: $accordion-corporate-content-color;
+	}
+
+	.card-body {
+		padding: $accordion-corporate-content-padding;
+	}
+
+	// Media queries
+	@include media-breakpoint-down(md) {
+		.card-arrow {
+			left: 0;
+		}
+		
+		.card-title a,
+		.card-body {
+			padding-left: 50px;
+		}
+	}
+	
+	@include media-breakpoint-up(md) {
+		.card-title a {
+			font-size: 20px;
+			line-height: 1.4;
+		}
+		
+		.card-arrow {
+			top: nth($accordion-corporate-header-padding, 1) + 3px;
+		}
+	}
+}

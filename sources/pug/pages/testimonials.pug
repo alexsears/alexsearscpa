@@ -1,0 +1,33 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'features'
+	- var pageName = 'Testimonials'
+
+block page 
+	// Page Header
+	include ../sections/_header-minimal
+
+	+breadcrumbs({
+		category: activeCategory,
+		path: [pageName]
+	})
+
+	// Testimonials
+	section.section.section-lg.bg-gray-100.section-first.text-center
+		.container
+			h3 Testimonials
+			include ../includes/_slick-widget-testimonials
+			
+	include ../sections/_section-testimonials-3-cols
+	include ../sections/_section-testimonials-and-video
+		
+		
+	// 2 Column Layout
+	section.section.section-lg.text-center
+		.container
+			h3 2 Column Layout
+			include ../includes/_owl-testimonials-2-cols
+
+	// Page Footer
+	include ../sections/_footer-minimal
