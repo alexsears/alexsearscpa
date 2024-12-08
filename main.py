@@ -2,7 +2,7 @@ import os
 import logging
 import smtplib
 from email.mime.text import MIMEText
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS, cross_origin
 import requests
 
@@ -115,6 +115,16 @@ def serve_contacts():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                   'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+@app.route('/appt')
+@app.route('/appointments')
+def serve_appointments():
+    try:
+        app.logger.debug("Attempting to render appointments.html")
+        return render_template('appointments.html')
+    except Exception as e:
+        app.logger.error(f"Error serving appointments: {str(e)}")
+        return f"Error: {str(e)}", 500
 
 def verify_recaptcha(recaptcha_response):
     logging.info(f"Verifying reCAPTCHA response: {recaptcha_response[:20]}...")  # Log first 20 chars for privacy

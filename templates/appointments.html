@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Schedule Appointment - Katy Accounting Firm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Work+Sans:300,700,800%7COswald:300,400,500">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" id="main-styles-link">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        iframe {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            border-radius: 4px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-fixed" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-aside-outer">
+                    <div class="rd-navbar-aside">
+                        <!-- RD Navbar Panel-->
+                        <div class="rd-navbar-panel">
+                            <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                            <a class="rd-navbar-brand" href="{{ url_for('serve_index') }}"><img src="{{ url_for('static', filename='images/logo-default-171x39.png') }}" alt="" width="171" height="39" srcset="{{ url_for('static', filename='images/logo-default-342x78.png') }}"/></a>
+                        </div>
+                        <!-- ... rest of navbar content ... -->
+                    </div>
+                </div>
+                <div class="rd-navbar-main-outer">
+                    <div class="rd-navbar-main">
+                        <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                            <ul class="rd-navbar-nav">
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_index') }}">Home</a></li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_about_us') }}">About Us</a></li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_services') }}">Our Services</a></li>
+                                <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url_for('serve_contacts') }}">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+      </header>
+
+      <div class="container">
+        <h2>Schedule an Appointment</h2>
+        <iframe 
+            src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ12P_rHpT9kFmmOZEfvvkW65mEVlrkLPiFwVL5HPLvhIbALDf-6SXYdwhx4xkCppjrZSa6CdILX" 
+            style="border: 0" 
+            width="100%" 
+            height="800" 
+            frameborder="0">
+        </iframe>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
